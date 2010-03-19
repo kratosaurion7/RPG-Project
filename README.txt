@@ -1,0 +1,1 @@
+This is just a simple readme to remind me to write one. Stay tuned, or don't, since this might take some time. I'll update the blog whenever I make big changes.
