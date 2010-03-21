@@ -46,21 +46,17 @@
 
     Private Sub fillMatrix(ByVal Matrix(,) As PictureBox, ByVal tilesMap As Array, ByVal spritesMap As Array)
         Dim iCounter As Integer
-        For COL As Integer = Matrix.GetLowerBound(0) To Matrix.GetUpperBound(0) 'TODO: ASK WTF IS HAPPENING !
+        For COL As Integer = Matrix.GetLowerBound(0) To Matrix.GetUpperBound(0)
             For LIG As Integer = Matrix.GetLowerBound(1) To Matrix.GetUpperBound(1)
-
+				Matrix(LIG, COL) = New PictureBox
                 Select Case tilesMap.GetValue(iCounter)
                     Case 0
-                        Matrix(LIG, COL) = New PictureBox
-                        Matrix(LIG, COL).BackgroundImage = My.Resources.GrassTile2 'Gets stuck whenever an image is assigned. YArrrr
+                        Matrix(LIG, COL).BackgroundImage = My.Resources.GrassTile2 
                     Case 1
-                        Matrix(LIG, COL) = New PictureBox
                         Matrix(LIG, COL).BackgroundImage = My.Resources.Up_Down_Road
                     Case 2
-                        Matrix(LIG, COL) = New PictureBox
                         Matrix(LIG, COL).BackgroundImage = My.Resources.left_right_Road
                     Case 3
-                        Matrix(LIG, COL) = New PictureBox
                         Matrix(LIG, COL).BackgroundImage = My.Resources.Crossroad_Road
                 End Select
 
