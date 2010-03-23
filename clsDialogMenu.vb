@@ -15,7 +15,7 @@
         Me.Enabled = False
         Me.Visible = False
 
-        myForm.BackColor = Color.Black
+        'myForm.BackColor = Color.Black
         Me.Location = New Point(40, 350)
         Me.Size = New Size(360, 100)
 
@@ -54,11 +54,11 @@
         Me.Visible = False
     End Sub
 
-    Public Sub New(ByVal sender As Object)
-        sender.Controls.Add(Me)
+    Public Sub New()
         init()
     End Sub
 
+    ' ?????
     Private Sub InitializeComponent()
         Me.SuspendLayout()
         Me.ResumeLayout(False)
