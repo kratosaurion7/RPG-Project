@@ -3,6 +3,201 @@ Imports System.Xml.Serialization
 Imports System.IO
 Public Class SimplifiedForm
 
+#Region "Arrays"
+
+#Region "BasicRoad"
+    Public BasicRoad_Map As Array = _
+{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 3, 2, 2, 2, 2, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0}
+    Public BasicRoad_Sprites As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, _
+4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 0, 0, 0, _
+0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 4, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+3, 2, 0, 2, 0, 0, 0, 0, 0, 4, 0, 0, 0, 0, 0, 3}
+    Public BasicRoad_Transitions As Array = _
+{0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, 0, 0, 0}
+#End Region
+#Region "Village"
+    Public Village_Map As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 3, 2, 2, 2, 2, 3, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 1, 0, _
+2, 2, 2, 2, 2, 2, 2, 2, 2, 3, 2, 2, 2, 2, 3, 2, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    Public Village_Sprites As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    Public Village_Transition As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+#End Region
+#Region "GrassyKnoll"
+    Public GrassyKnoll_Map As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0}
+    Public GrassyKnoll_Sprites As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+    Public GrassyKnoll_Transition As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0}
+#End Region
+
+#Region "Defaults"
+    Public Blank As Array = _
+{0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0}
+#End Region
+
+#End Region
+
+
+#Region "Map Declarations"
+
+    Dim BasicRoad As New clsTerrain("BasicRoad", BasicRoad_Map, BasicRoad_Sprites, BasicRoad_Transitions)
+    Dim GrassyKnoll As New clsTerrain("GrassyKnoll", GrassyKnoll_Map, GrassyKnoll_Sprites, GrassyKnoll_Transition)
+    Dim Village As New clsTerrain("Village", Village_Map, Village_Transition, Blank)
+
+    Dim currentMap As clsTerrain
+
+#End Region
+
 #Region "I/O Declaration"
     '######## Deletion? ########
     'Private TestArray1 As Array
@@ -14,12 +209,8 @@ Public Class SimplifiedForm
 #End Region
 
     Dim theOneMatrix(15, 15) As clsTile
-    Dim TileRepo As New clsTerrain
 
     Dim tileSize As Integer = 32
-
-    Dim heroPos_X As Integer = 7
-    Dim heroPos_Y As Integer = 2
 
     Dim dialogMenu As New clsDialogMenu
 
@@ -31,15 +222,13 @@ Public Class SimplifiedForm
     ''' sprite a tag for identification ## Will need a better detection system than tags ## 
     ''' </summary>
     ''' <param name="Matrix">The matrix of clsTilees that is used to store the tiles and sprites. Dim'ed as a (15, 15) matrix.</param>
-    ''' <param name="tilesMap">The array containing the tiles data.</param>
-    ''' <param name="spritesMap">The array containing the sprites data.</param>
     ''' <remarks></remarks>
-    Private Sub fillMatrix(ByVal Matrix(,) As clsTile, ByVal tilesMap As Array, ByVal spritesMap As Array)
+    Private Sub fillMatrix(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
         Dim iCounter As Integer
         For COL As Integer = Matrix.GetLowerBound(0) To Matrix.GetUpperBound(0)
             For LIG As Integer = Matrix.GetLowerBound(1) To Matrix.GetUpperBound(1)
                 Matrix(LIG, COL) = New clsTile
-                Select Case tilesMap.GetValue(iCounter)
+                Select Case Map.gridMap.GetValue(iCounter)
                     Case 0
                         Matrix(LIG, COL).BackgroundImage = My.Resources.GrassTile2
                     Case 1
@@ -50,7 +239,7 @@ Public Class SimplifiedForm
                         Matrix(LIG, COL).BackgroundImage = My.Resources.Crossroad_Road
                 End Select
 
-                Select Case spritesMap.GetValue(iCounter)
+                Select Case Map.spriteMap.GetValue(iCounter)
                     Case 0
                     Case 1
                         Matrix(LIG, COL).Tag = "Megaman"
@@ -97,10 +286,10 @@ Public Class SimplifiedForm
                 Matrix(LIG, COL).Size = New Size(tileSize, tileSize)
                 Me.Controls.Add(Matrix(LIG, COL))
 
-                POS_X += 32 'Same as below
+                POS_X += 32
             Next
             POS_X = 0
-            POS_Y += 32 'TODO: Should make this TilsSize rather than +32, have to add a parameter.
+            POS_Y += 32
         Next
 
     End Sub
@@ -110,13 +299,17 @@ Public Class SimplifiedForm
     ''' Will also bring to front so we can see it.
     ''' </summary>
     ''' <param name="Matrix">Matrix the hero will be placed inside.</param>
-    ''' <param name="LOC_X">The Column in which to add the hero</param>
-    ''' <param name="LOC_Y">The line in which to add the hero at.</param>
+    ''' <param name="Map"></param>
     ''' <remarks></remarks>
-    Private Sub addHero(ByRef Matrix(,) As clsTile, ByVal LOC_X As Integer, ByVal LOC_Y As Integer)
-        Matrix(LOC_X, LOC_Y).Image = My.Resources.Link
-        Matrix(LOC_X, LOC_Y).BringToFront()
+    Private Sub addHero(ByRef Matrix(,) As clsTile, ByVal Map As clsTerrain)
 
+        Matrix(Map.Position.X, Map.Position.Y).Image = My.Resources.Link
+        Matrix(Map.Position.X, Map.Position.Y).BringToFront()
+
+    End Sub
+
+    Private Sub RemoveHero(ByRef Matrix(,) As clsTile, ByVal Map As clsTerrain)
+        Matrix(Map.Position.X, Map.Position.Y).Image = Nothing
     End Sub
 
     ''' <summary>
@@ -125,25 +318,34 @@ Public Class SimplifiedForm
     ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
     ''' </summary>
     ''' <param name="Matrix"></param>
-    ''' <param name="LOC_X"></param>
-    ''' <param name="LOC_Y"></param>
     ''' <remarks></remarks>
-    Private Sub moveUP(ByRef Matrix(,) As clsTile, ByVal LOC_X As Integer, ByVal LOC_Y As Integer)
-        If LOC_Y > 0 Then
-            If Matrix(LOC_X, LOC_Y - 1).Image Is Nothing Then
-                Matrix(LOC_X, LOC_Y - 1).Image = My.Resources.Link
-                Matrix(LOC_X, LOC_Y).Image = Nothing
-                heroPos_Y -= 1
-                HideDialogPanel()
+    Private Sub moveUP(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
+        Dim HeroPOS As Point = Map.Position
 
+        If HeroPOS.Y > 0 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+
+            If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then
+                Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
+                HeroPOS.Y -= 1
+                HideDialogPanel()
+                Map.Position = HeroPOS
+            Else
+                Select Case Matrix(HeroPOS.X, HeroPOS.Y - 1).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                    Case "Megaman"
+                        EnableDialogPanel("Hi whats up Link !")
+
+                End Select
+            End If
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
+            If Map.ToTheTop Is Nothing = False Then
+                RemoveHero(theOneMatrix, Map)
+                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheTop)
             End If
 
-            Select Case Matrix(LOC_X, LOC_Y - 1).Tag
-                Case "Megaman"
-                    EnableDialogPanel("Hi whats up Link !")
-
-            End Select
         End If
+
+
     End Sub
     ''' <summary>
     ''' This will check if the space directly on down of the hero is free. By checking in the matrix(x, y+1) to check if the image is nothing
@@ -151,25 +353,34 @@ Public Class SimplifiedForm
     ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
     ''' </summary>
     ''' <param name="Matrix"></param>
-    ''' <param name="LOC_X"></param>
-    ''' <param name="LOC_Y"></param>
     ''' <remarks></remarks>
-    Private Sub moveDOWN(ByRef Matrix(,) As clsTile, ByVal LOC_X As Integer, ByVal LOC_Y As Integer)
-        If LOC_Y < 15 Then
-            If Matrix(LOC_X, LOC_Y + 1).Image Is Nothing Then
-                Matrix(LOC_X, LOC_Y + 1).Image = My.Resources.Link
-                Matrix(LOC_X, LOC_Y).Image = Nothing
-                heroPos_Y += 1
-                HideDialogPanel()
+    Private Sub moveDOWN(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
+        Dim HeroPOS As Point = Map.Position
 
+        If HeroPOS.Y < 15 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+
+            If Matrix(HeroPOS.X, HeroPOS.Y + 1).Image Is Nothing Then
+                Matrix(HeroPOS.X, HeroPOS.Y + 1).Image = My.Resources.Link
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
+                HeroPOS.Y += 1
+                HideDialogPanel()
+                Map.Position = HeroPOS
+            Else
+                Select Case Matrix(HeroPOS.X, HeroPOS.Y + 1).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                    Case "Megaman"
+                        EnableDialogPanel("Hi whats up Link !")
+
+                End Select
+            End If
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
+            If Map.ToTheBottom Is Nothing = False Then
+                RemoveHero(theOneMatrix, Map)
+                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheBottom)
             End If
 
-            Select Case Matrix(LOC_X, LOC_Y + 1).Tag
-                Case "Megaman"
-                    EnableDialogPanel("Hi whats up Link !")
-
-            End Select
         End If
+
+
     End Sub
     ''' <summary>
     ''' This will check if the space directly on the left of the hero is free. By checking in the matrix(x-1, y) to check if the image is nothing
@@ -177,27 +388,36 @@ Public Class SimplifiedForm
     ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
     ''' </summary>
     ''' <param name="Matrix"></param>
-    ''' <param name="LOC_X"></param>
-    ''' <param name="LOC_Y"></param>
     ''' <remarks></remarks>
-    Private Sub moveLEFT(ByRef Matrix(,) As clsTile, ByVal LOC_X As Integer, ByVal LOC_Y As Integer)
-        If LOC_X > 0 Then
+    Private Sub moveLEFT(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
+        Dim HeroPOS As Point = Map.Position
 
-            If Matrix(LOC_X - 1, LOC_Y).Image Is Nothing Then
-                Matrix(LOC_X - 1, LOC_Y).Image = My.Resources.Link
-                Matrix(LOC_X, LOC_Y).Image = Nothing
-                heroPos_X -= 1
+        If HeroPOS.X > 0 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
 
+            If Matrix(HeroPOS.X - 1, HeroPOS.Y).Image Is Nothing Then
+                Matrix(HeroPOS.X - 1, HeroPOS.Y).Image = My.Resources.Link
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
+                HeroPOS.X -= 1
                 HideDialogPanel()
+                Map.Position = HeroPOS
+            Else
+                Select Case Matrix(HeroPOS.X - 1, HeroPOS.Y).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                    Case "Megaman"
+                        EnableDialogPanel("Hi whats up Link !")
+
+                End Select
+            End If
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
+            If Map.ToTheLeft Is Nothing = False Then
+                RemoveHero(theOneMatrix, Map)
+                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheLeft)
             End If
 
-            Select Case Matrix(LOC_X - 1, LOC_Y).Tag
-                Case "Megaman"
-                    EnableDialogPanel("Hi whats up Link !")
-
-            End Select
-
         End If
+
+
+
+
     End Sub
     ''' <summary>
     '''  This will check if the space directly on the right of the hero is free. By checking in the matrix(x+1, y) to check if the image is nothing
@@ -205,25 +425,43 @@ Public Class SimplifiedForm
     ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
     ''' </summary>
     ''' <param name="Matrix"></param>
-    ''' <param name="LOC_X"></param>
-    ''' <param name="LOC_Y"></param>
     ''' <remarks></remarks>
-    Private Sub moveRIGHT(ByRef Matrix(,) As clsTile, ByVal LOC_X As Integer, ByVal LOC_Y As Integer)
-        If LOC_X < 15 Then
-            If Matrix(LOC_X + 1, LOC_Y).Image Is Nothing Then
-                Matrix(LOC_X + 1, LOC_Y).Image = My.Resources.Link
-                Matrix(LOC_X, LOC_Y).Image = Nothing
-                heroPos_X += 1
+    Private Sub moveRIGHT(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
+        Dim HeroPOS As Point = Map.Position
+
+        If HeroPOS.X < 15 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+
+            If Matrix(HeroPOS.X + 1, HeroPOS.Y).Image Is Nothing Then
+                Matrix(HeroPOS.X + 1, HeroPOS.Y).Image = My.Resources.Link
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
+                HeroPOS.X += 1
                 HideDialogPanel()
+                Map.Position = HeroPOS
+            Else
+                Select Case Matrix(HeroPOS.X + 1, HeroPOS.Y).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                    Case "Megaman"
+                        EnableDialogPanel("Hi whats up Link !")
+
+                End Select
+            End If
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
+            If Map.ToTheRight Is Nothing = False Then
+                RemoveHero(theOneMatrix, Map)
+                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheRight)
+            Else
 
             End If
 
-            Select Case Matrix(LOC_X + 1, LOC_Y).Tag
-                Case "Megaman"
-                    EnableDialogPanel("Hi whats up Link !")
-
-            End Select
         End If
+
+
+        '########   What to do: ########
+        'Currently, when in a transition tile. WHICHEVER tile you are on, if you press right you are going to teleport to Village
+        'Because the conditionals does not check which transition you are on. Don't forget you can add a property to the clsTile class
+        'When opening a new map, link appears in his default spawn point but really is still at the old location and will move from there.
+
+
+
     End Sub
 #Region "I/O Methods"
     'Private Sub removeAllImages()
@@ -255,20 +493,32 @@ Public Class SimplifiedForm
     'End Sub
 #End Region
 
-    Private Sub GenerateTransitions(ByVal Matrix(,) As clsTile)
+    Private Sub GenerateTransitions(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
+        Dim iCounter As Integer
+        For COL As Integer = Matrix.GetLowerBound(0) To Matrix.GetUpperBound(0)
+            For LIG As Integer = Matrix.GetLowerBound(1) To Matrix.GetUpperBound(1)
+                If Map.transitionsMap(iCounter) = 1 Then
+                    Matrix(LIG, COL).IsTransition = True
+
+                End If
+                iCounter += 1
+            Next
+        Next
 
     End Sub
 
-    Private Sub RemoveAndApplyTileSet(ByVal Matrix(,) As clsTile, ByVal tileset As Array, ByVal spriteSet As Array)
+    Private Sub RemoveAndApplyTileSet(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
         Me.Controls.Clear()
-        fillMatrix(Matrix, tileset, spriteSet)
+        fillMatrix(Matrix, Map)
         showMatrix(Matrix)
-        addHero(Matrix, heroPos_X, heroPos_Y)
+        Matrix(Map.Position.X, Map.Position.Y).Image = Nothing
+        addHero(Matrix, Map)
+
 
     End Sub
 
     ''' <summary>
-    ''' That spawns the dialog box and using its mathod, will add the text "Test"
+    ''' That spawns the dialog box and using its method, will add the text "Test"
     ''' </summary>
     ''' <remarks></remarks>
     Private Sub EnableDialogPanel(ByVal text As String)
@@ -286,25 +536,35 @@ Public Class SimplifiedForm
 
     Private Sub SimplifiedForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
+        '######## Part 0 - Init ########         'Should put that in a sub ?
+        BasicRoad.initSurroundings(, Village, , ) : BasicRoad.Position = New Point(7, 2)
+        Village.initSurroundings(, , , BasicRoad) : Village.Position = New Point(0, 9)
+        GrassyKnoll.initSurroundings(, , Village, ) : GrassyKnoll.Position = New Point(5, 15)
+
+        currentMap = BasicRoad
+
+
         '######## Part 1 - Test ########
-        fillMatrix(theOneMatrix, TileRepo.BasicRoad, TileRepo.SpriteMap)
+        fillMatrix(theOneMatrix, BasicRoad)
         showMatrix(theOneMatrix)
-        addHero(theOneMatrix, heroPos_X, heroPos_Y)
+        addHero(theOneMatrix, BasicRoad)
+        GenerateTransitions(theOneMatrix, BasicRoad)
 
         '######## Part 2 - Functionality Test ########
 
     End Sub
 
+
     Public Sub SimplifiedForm_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
         Select Case e.KeyCode
             Case Keys.Up
-                moveUP(theOneMatrix, heroPos_X, heroPos_Y)
+                moveUP(theOneMatrix, currentMap)
             Case Keys.Down
-                moveDOWN(theOneMatrix, heroPos_X, heroPos_Y)
+                moveDOWN(theOneMatrix, currentMap)
             Case Keys.Left
-                moveLEFT(theOneMatrix, heroPos_X, heroPos_Y)
+                moveLEFT(theOneMatrix, currentMap)
             Case Keys.Right
-                moveRIGHT(theOneMatrix, heroPos_X, heroPos_Y)
+                moveRIGHT(theOneMatrix, currentMap)
             Case Keys.Escape
                 Application.Exit()
             Case Keys.E
@@ -314,10 +574,13 @@ Public Class SimplifiedForm
             Case Keys.R
                 dialogMenu.hideDialogPanel()
             Case Keys.Q
-                RemoveAndApplyTileSet(theOneMatrix, TileRepo.Village, TileRepo.SpriteMap)
+                RemoveAndApplyTileSet(theOneMatrix, Village)
             Case Keys.W
-                RemoveAndApplyTileSet(theOneMatrix, TileRepo.BasicRoad, TileRepo.SpriteMap)
+                RemoveAndApplyTileSet(theOneMatrix, Village)
 
         End Select
     End Sub
+
+
+
 End Class
