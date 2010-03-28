@@ -102,7 +102,7 @@ Public Class SimplifiedForm
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
-0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
+1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, _
@@ -192,7 +192,7 @@ Public Class SimplifiedForm
 
     Dim BasicRoad As New clsTerrain("BasicRoad", BasicRoad_Map, BasicRoad_Sprites, BasicRoad_Transitions)
     Dim GrassyKnoll As New clsTerrain("GrassyKnoll", GrassyKnoll_Map, GrassyKnoll_Sprites, GrassyKnoll_Transition)
-    Dim Village As New clsTerrain("Village", Village_Map, Village_Transition, Blank)
+    Dim Village As New clsTerrain("Village", Village_Map, Village_Sprites, Village_Transition)
 
     Dim currentMap As clsTerrain
 
@@ -320,30 +320,70 @@ Public Class SimplifiedForm
     ''' <param name="Matrix"></param>
     ''' <remarks></remarks>
     Private Sub moveUP(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
-        Dim HeroPOS As Point = Map.Position
 
-        If HeroPOS.Y > 0 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+        Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
 
-            If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then
-                Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link
-                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
-                HeroPOS.Y -= 1
-                HideDialogPanel()
-                Map.Position = HeroPOS
+        If CheckIfBorder(HeroPOS) = False And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then 'If the tile we're on is NOT on the border and is NOT a transition
+
+            If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then       'Check if the next tile is free
+                Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link  'Put our image on the next tile
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                HeroPOS.Y -= 1                                              'Update the coordinates
+                HideDialogPanel()                                           'Hide the panel if its on
+                Map.Position = HeroPOS                                      'Return the values of the variable to the class
             Else
-                Select Case Matrix(HeroPOS.X, HeroPOS.Y - 1).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                Select Case Matrix(HeroPOS.X, HeroPOS.Y - 1).Tag
                     Case "Megaman"
-                        EnableDialogPanel("Hi whats up Link !")
+                        EnableDialogPanel("Hi, whats up Link !")
 
                 End Select
             End If
-        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
-            If Map.ToTheTop Is Nothing = False Then
-                RemoveHero(theOneMatrix, Map)
-                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheTop)
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True And CheckIfBorder(HeroPOS) = True Then 'If the tile we're on IS a transition and IS on the border of the map.
+            If HeroPOS.Y - 1 < 0 Then
+                If Map.ToTheTop Is Nothing = False Then 'Checks if there IS a map to the right, if there is:
+                    currentMap = Map.ToTheTop
+                    currentMap.Position = New Point(HeroPOS.X, HeroPOS.Y + 15)
+                    RemoveAndApplyTileSet(theOneMatrix, currentMap)
+                End If
+            Else
+                If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.Y -= 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X, HeroPOS.Y - 1).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
+
+                    End Select
+                End If
             End If
 
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True And CheckIfBorder(HeroPOS) = False Then
+            'Door Transition
+
+
+        ElseIf CheckIfBorder(HeroPOS) = True And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+            If HeroPOS.Y - 1 > 0 Then
+                If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.Y -= 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X, HeroPOS.Y - 1).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
+
+                    End Select
+                End If
+            End If
         End If
+
+
 
 
     End Sub
@@ -355,30 +395,70 @@ Public Class SimplifiedForm
     ''' <param name="Matrix"></param>
     ''' <remarks></remarks>
     Private Sub moveDOWN(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
-        Dim HeroPOS As Point = Map.Position
 
-        If HeroPOS.Y < 15 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+        Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
 
-            If Matrix(HeroPOS.X, HeroPOS.Y + 1).Image Is Nothing Then
-                Matrix(HeroPOS.X, HeroPOS.Y + 1).Image = My.Resources.Link
-                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
-                HeroPOS.Y += 1
-                HideDialogPanel()
-                Map.Position = HeroPOS
+        If CheckIfBorder(HeroPOS) = False And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then 'If the tile we're on is NOT on the border and is NOT a transition
+
+            If Matrix(HeroPOS.X, HeroPOS.Y + 1).Image Is Nothing Then       'Check if the next tile is free
+                Matrix(HeroPOS.X, HeroPOS.Y + 1).Image = My.Resources.Link  'Put our image on the next tile
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                HeroPOS.Y += 1                                              'Update the coordinates
+                HideDialogPanel()                                           'Hide the panel if its on
+                Map.Position = HeroPOS                                      'Return the values of the variable to the class
             Else
-                Select Case Matrix(HeroPOS.X, HeroPOS.Y + 1).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                Select Case Matrix(HeroPOS.X, HeroPOS.Y + 1).Tag
                     Case "Megaman"
-                        EnableDialogPanel("Hi whats up Link !")
+                        EnableDialogPanel("Hi, whats up Link !")
 
                 End Select
             End If
-        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
-            If Map.ToTheBottom Is Nothing = False Then
-                RemoveHero(theOneMatrix, Map)
-                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheBottom)
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True And CheckIfBorder(HeroPOS) = True Then 'If the tile we're on IS a transition and IS on the border of the map.
+            If HeroPOS.Y + 1 > 15 Then
+                If Map.ToTheBottom Is Nothing = False Then 'Checks if there IS a map to the right, if there is:
+                    currentMap = Map.ToTheBottom
+                    currentMap.Position = New Point(HeroPOS.X, HeroPOS.Y - 15)
+                    RemoveAndApplyTileSet(theOneMatrix, currentMap)
+                End If
+            Else
+                If Matrix(HeroPOS.X, HeroPOS.Y + 1).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X, HeroPOS.Y + 1).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.Y += 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X, HeroPOS.Y + 1).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
+
+                    End Select
+                End If
             End If
 
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True And CheckIfBorder(HeroPOS) = False Then
+            'Door Transition
+
+
+        ElseIf CheckIfBorder(HeroPOS) = True And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+            If HeroPOS.Y + 1 < 15 Then
+                If Matrix(HeroPOS.X, HeroPOS.Y + 1).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X, HeroPOS.Y + 1).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.Y += 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X, HeroPOS.Y + 1).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
+
+                    End Select
+                End If
+            End If
         End If
+
+
 
 
     End Sub
@@ -390,35 +470,76 @@ Public Class SimplifiedForm
     ''' <param name="Matrix"></param>
     ''' <remarks></remarks>
     Private Sub moveLEFT(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
-        Dim HeroPOS As Point = Map.Position
+        Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
 
-        If HeroPOS.X > 0 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+        If CheckIfBorder(HeroPOS) = False And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then 'If the tile we're on is NOT on the border and is NOT a transition
 
-            If Matrix(HeroPOS.X - 1, HeroPOS.Y).Image Is Nothing Then
-                Matrix(HeroPOS.X - 1, HeroPOS.Y).Image = My.Resources.Link
-                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
-                HeroPOS.X -= 1
-                HideDialogPanel()
-                Map.Position = HeroPOS
+            If Matrix(HeroPOS.X - 1, HeroPOS.Y).Image Is Nothing Then       'Check if the next tile is free
+                Matrix(HeroPOS.X - 1, HeroPOS.Y).Image = My.Resources.Link  'Put our image on the next tile
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                HeroPOS.X -= 1                                              'Update the coordinates
+                HideDialogPanel()                                           'Hide the panel if its on
+                Map.Position = HeroPOS                                      'Return the values of the variable to the class
             Else
-                Select Case Matrix(HeroPOS.X - 1, HeroPOS.Y).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                Select Case Matrix(HeroPOS.X - 1, HeroPOS.Y).Tag
                     Case "Megaman"
-                        EnableDialogPanel("Hi whats up Link !")
+                        EnableDialogPanel("Hi, whats up Link !")
 
                 End Select
             End If
-        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
-            If Map.ToTheLeft Is Nothing = False Then
-                RemoveHero(theOneMatrix, Map)
-                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheLeft)
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True And CheckIfBorder(HeroPOS) = True Then 'If the tile we're on IS a transition and IS on the border of the map.
+            If HeroPOS.X - 1 < 0 Then
+                If Map.ToTheLeft Is Nothing = False Then 'Checks if there IS a map to the right, if there is:
+                    currentMap = Map.ToTheLeft
+                    currentMap.Position = New Point(HeroPOS.X + 15, HeroPOS.Y)
+                    RemoveAndApplyTileSet(theOneMatrix, currentMap)
+                End If
+            Else
+                If Matrix(HeroPOS.X - 1, HeroPOS.Y).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X - 1, HeroPOS.Y).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.X -= 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X - 1, HeroPOS.Y).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
+
+                    End Select
+                End If
             End If
 
+
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True And CheckIfBorder(HeroPOS) = False Then
+            'Door Transition
+
+
+        ElseIf CheckIfBorder(HeroPOS) = True And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+            If HeroPOS.X - 1 > 0 Then
+                If Matrix(HeroPOS.X - 1, HeroPOS.Y).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X - 1, HeroPOS.Y).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.X -= 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X - 1, HeroPOS.Y).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
+
+                    End Select
+                End If
+            End If
         End If
 
 
 
 
+
     End Sub
+
+
     ''' <summary>
     '''  This will check if the space directly on the right of the hero is free. By checking in the matrix(x+1, y) to check if the image is nothing
     ''' (the absence of a sprite). If it IS nothing, the image of that tile will be our hero's and the tile our hero was will have its 
@@ -427,38 +548,67 @@ Public Class SimplifiedForm
     ''' <param name="Matrix"></param>
     ''' <remarks></remarks>
     Private Sub moveRIGHT(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
-        Dim HeroPOS As Point = Map.Position
+        Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
 
-        If HeroPOS.X < 15 And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+        If CheckIfBorder(HeroPOS) = False And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then 'If the tile we're on is NOT on the border and is NOT a transition
 
-            If Matrix(HeroPOS.X + 1, HeroPOS.Y).Image Is Nothing Then
-                Matrix(HeroPOS.X + 1, HeroPOS.Y).Image = My.Resources.Link
-                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
-                HeroPOS.X += 1
-                HideDialogPanel()
-                Map.Position = HeroPOS
+            If Matrix(HeroPOS.X + 1, HeroPOS.Y).Image Is Nothing Then       'Check if the next tile is free
+                Matrix(HeroPOS.X + 1, HeroPOS.Y).Image = My.Resources.Link  'Put our image on the next tile
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                HeroPOS.X += 1                                              'Update the coordinates
+                HideDialogPanel()                                           'Hide the panel if its on
+                Map.Position = HeroPOS                                      'Return the values of the variable to the class
             Else
-                Select Case Matrix(HeroPOS.X + 1, HeroPOS.Y).Tag 'This could get annoying, it asks the Y-1 even though we have advanced. So thats Y-2 from whatever value we started with.
+                Select Case Matrix(HeroPOS.X + 1, HeroPOS.Y).Tag
                     Case "Megaman"
-                        EnableDialogPanel("Hi whats up Link !")
+                        EnableDialogPanel("Hi, whats up Link !")
 
                 End Select
             End If
-        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True Then
-            If Map.ToTheRight Is Nothing = False Then
-                RemoveHero(theOneMatrix, Map)
-                RemoveAndApplyTileSet(theOneMatrix, Map.ToTheRight)
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = True And CheckIfBorder(HeroPOS) = True Then
+            If HeroPOS.X + 1 > 15 Then
+                If Map.ToTheRight Is Nothing = False Then 'Checks if there IS a map to the right, if there is:
+                    currentMap = Map.ToTheRight
+                    currentMap.Position = New Point(HeroPOS.X - 15, HeroPOS.Y)
+                    RemoveAndApplyTileSet(theOneMatrix, currentMap)
+                End If
             Else
+                If Matrix(HeroPOS.X + 1, HeroPOS.Y).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X + 1, HeroPOS.Y).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.X += 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X + 1, HeroPOS.Y).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
 
+                    End Select
+                End If
             End If
 
+        ElseIf Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False And CheckIfBorder(HeroPOS) = False Then
+            'Door Transition
+
+
+        ElseIf CheckIfBorder(HeroPOS) = True And Matrix(HeroPOS.X, HeroPOS.Y).IsTransition = False Then
+            If HeroPOS.X + 1 < 15 Then
+                If Matrix(HeroPOS.X + 1, HeroPOS.Y).Image Is Nothing Then       'Check if the next tile is free
+                    Matrix(HeroPOS.X + 1, HeroPOS.Y).Image = My.Resources.Link  'Put our image on the next tile
+                    Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing                'Remove our image from the tile we're on
+                    HeroPOS.X += 1                                              'Update the coordinates
+                    HideDialogPanel()                                           'Hide the panel if its on
+                    Map.Position = HeroPOS                                      'Return the values of the variable to the class
+                Else
+                    Select Case Matrix(HeroPOS.X + 1, HeroPOS.Y).Tag
+                        Case "Megaman"
+                            EnableDialogPanel("Hi, whats up Link !")
+
+                    End Select
+                End If
+            End If
         End If
-
-
-        '########   What to do: ########
-        'Currently, when in a transition tile. WHICHEVER tile you are on, if you press right you are going to teleport to Village
-        'Because the conditionals does not check which transition you are on. Don't forget you can add a property to the clsTile class
-        'When opening a new map, link appears in his default spawn point but really is still at the old location and will move from there.
 
 
 
@@ -493,12 +643,23 @@ Public Class SimplifiedForm
     'End Sub
 #End Region
 
+    Private Function CheckIfBorder(ByVal Location As Point) As Boolean
+        If Location.X = 0 Or Location.X = 15 Or Location.Y = 0 Or Location.Y = 15 Then
+            Return True
+        Else
+            Return False
+        End If
+    End Function
+    'Generer l'ebauche d'un plan pour initier les transitions. 
+    'Could make it that if the array has anything else than 0, its going to be a transition. Values are the GoingTo Value, instead of hardcoding the 
+    'values in the 
     Private Sub GenerateTransitions(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
         Dim iCounter As Integer
         For COL As Integer = Matrix.GetLowerBound(0) To Matrix.GetUpperBound(0)
             For LIG As Integer = Matrix.GetLowerBound(1) To Matrix.GetUpperBound(1)
                 If Map.transitionsMap(iCounter) = 1 Then
                     Matrix(LIG, COL).IsTransition = True
+                    Matrix(LIG, COL).Transition_Coordonate = New Point(LIG, COL)
 
                 End If
                 iCounter += 1
@@ -510,8 +671,9 @@ Public Class SimplifiedForm
     Private Sub RemoveAndApplyTileSet(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
         Me.Controls.Clear()
         fillMatrix(Matrix, Map)
+        GenerateTransitions(theOneMatrix, Map)
         showMatrix(Matrix)
-        Matrix(Map.Position.X, Map.Position.Y).Image = Nothing
+        'Matrix(Map.Position.X, Map.Position.Y).Image = Nothing 'Needed anymore ?
         addHero(Matrix, Map)
 
 
@@ -579,6 +741,26 @@ Public Class SimplifiedForm
                 RemoveAndApplyTileSet(theOneMatrix, Village)
 
         End Select
+    End Sub
+
+    Public Sub TEST(ByVal Border As Boolean, ByVal Transition As Boolean)
+        If Border = False And Transition = False Then
+            'Walk normaly
+
+        ElseIf Border = False And Transition = True Then
+            'Door transition
+
+        ElseIf Border = True And Transition = False Then
+            'Walk normaly
+
+        ElseIf Border = True And Transition = True Then
+            'Transition IF the right buttun is presses
+
+        Else
+            'Walk normaly
+
+        End If
+
     End Sub
 
 

@@ -9,7 +9,7 @@ Public Class clsTerrain
 #End Region
 
 #Region "Declarations"
-    Dim mapName As String
+    Public mapName As String
 
     Public gridMap As Array
     Public spriteMap As Array
