@@ -659,7 +659,6 @@ Public Class SimplifiedForm
             For LIG As Integer = Matrix.GetLowerBound(1) To Matrix.GetUpperBound(1)
                 If Map.transitionsMap(iCounter) = 1 Then
                     Matrix(LIG, COL).IsTransition = True
-                    Matrix(LIG, COL).Transition_Coordonate = New Point(LIG, COL)
 
                 End If
                 iCounter += 1
