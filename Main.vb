@@ -198,31 +198,12 @@ Public Class SimplifiedForm
 
 #End Region
 
-#Region "I/O Declaration"
-    '######## Deletion? ########
-    'Private TestArray1 As Array
-    'Private TestArray2 As Array
-    'Private TestArray3 As Array
-    'Dim fStream As Stream = New FileStream("Maps.mp", FileMode.Create, FileAccess.Write, FileShare.None)
-    'Dim binFormat As New BinaryFormatter()
-    '######## Deletion? ########
-#End Region
-
     Dim theOneMatrix(15, 15) As clsTile
 
     Dim tileSize As Integer = 32
 
     Dim dialogMenu As New clsDialogMenu
 
-
-    ''' <summary>
-    ''' Scrolls through the matrix using the LIG/COL technique, make a new instance of them and assigns them a picture from the array
-    ''' based on a counter that increase by one every interation. This is to make the array position match the position in the matrix.
-    ''' It firsts applies the background image, that will be the tile and then the image property that will be the sprite. Gives every
-    ''' sprite a tag for identification ## Will need a better detection system than tags ## 
-    ''' </summary>
-    ''' <param name="Matrix">The matrix of clsTilees that is used to store the tiles and sprites. Dim'ed as a (15, 15) matrix.</param>
-    ''' <remarks></remarks>
     Private Sub fillMatrix(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
         Dim iCounter As Integer
         For COL As Integer = Matrix.GetLowerBound(0) To Matrix.GetUpperBound(0)
@@ -269,14 +250,6 @@ Public Class SimplifiedForm
 
     End Sub
 
-    ''' <summary>
-    ''' Using PosX and Pos_Y, this will scroll through the matrix using the LIG/COL technique and place the clsTilees from the 
-    ''' matrix. After each iteration Pos_X will add up 32 ( the size of the tiles ) so the location of the next clsTile will be right in place
-    ''' . After a column(COL) has been scrolled through X will be reset and Y will have +32. This will make the pointer skip to next line
-    ''' and start at the first X.
-    ''' </summary>
-    ''' <param name="Matrix">The matrix containing the clsTilees.</param>
-    ''' <remarks></remarks>
     Private Sub showMatrix(ByVal Matrix(,) As clsTile)
         Dim POS_X, POS_Y As Integer
 
@@ -294,13 +267,6 @@ Public Class SimplifiedForm
 
     End Sub
 
-    ''' <summary>
-    ''' This will spawn the hero at the tile specified by LOC_X and loc_Y by assiging the image of the the Matrix(X, Y) as Link. 
-    ''' Will also bring to front so we can see it.
-    ''' </summary>
-    ''' <param name="Matrix">Matrix the hero will be placed inside.</param>
-    ''' <param name="Map"></param>
-    ''' <remarks></remarks>
     Private Sub addHero(ByRef Matrix(,) As clsTile, ByVal Map As clsTerrain)
 
         Matrix(Map.Position.X, Map.Position.Y).Image = My.Resources.Link
@@ -312,13 +278,6 @@ Public Class SimplifiedForm
         Matrix(Map.Position.X, Map.Position.Y).Image = Nothing
     End Sub
 
-    ''' <summary>
-    ''' This will check if the space directly on top of the hero is free. By checking in the matrix(x, y-1) to check if the image is nothing
-    ''' (the absence of a sprite). If it IS nothing, the image of that tile will be our hero's and the tile our hero was will have its 
-    ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
-    ''' </summary>
-    ''' <param name="Matrix"></param>
-    ''' <remarks></remarks>
     Private Sub moveUP(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
 
         Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
@@ -387,13 +346,6 @@ Public Class SimplifiedForm
 
 
     End Sub
-    ''' <summary>
-    ''' This will check if the space directly on down of the hero is free. By checking in the matrix(x, y+1) to check if the image is nothing
-    ''' (the absence of a sprite). If it IS nothing, the image of that tile will be our hero's and the tile our hero was will have its 
-    ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
-    ''' </summary>
-    ''' <param name="Matrix"></param>
-    ''' <remarks></remarks>
     Private Sub moveDOWN(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
 
         Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
@@ -462,13 +414,7 @@ Public Class SimplifiedForm
 
 
     End Sub
-    ''' <summary>
-    ''' This will check if the space directly on the left of the hero is free. By checking in the matrix(x-1, y) to check if the image is nothing
-    ''' (the absence of a sprite). If it IS nothing, the image of that tile will be our hero's and the tile our hero was will have its 
-    ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
-    ''' </summary>
-    ''' <param name="Matrix"></param>
-    ''' <remarks></remarks>
+
     Private Sub moveLEFT(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
         Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
 
@@ -539,14 +485,6 @@ Public Class SimplifiedForm
 
     End Sub
 
-
-    ''' <summary>
-    '''  This will check if the space directly on the right of the hero is free. By checking in the matrix(x+1, y) to check if the image is nothing
-    ''' (the absence of a sprite). If it IS nothing, the image of that tile will be our hero's and the tile our hero was will have its 
-    ''' image reset. If there IS something, and its Tag correspond to an NPC the dialog box will open and a dialog will begin.
-    ''' </summary>
-    ''' <param name="Matrix"></param>
-    ''' <remarks></remarks>
     Private Sub moveRIGHT(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
         Dim HeroPOS As Point = Map.Position 'This is to save keystrokes
 
@@ -613,35 +551,6 @@ Public Class SimplifiedForm
 
 
     End Sub
-#Region "I/O Methods"
-    'Private Sub removeAllImages()
-    '    Me.Controls.Clear()
-    'End Sub
-
-    'Private Sub saveArrays()
-    '    Dim arrayFile As New clsBunchOfArrays
-    '    binFormat.Serialize(fStream, arrayFile)
-    '    fStream.Close()
-
-
-    'End Sub
-
-    'Private Sub loadArrays()
-    '    removeAllImages()
-    '    fStream = File.OpenRead("Maps.mp")
-
-    '    Dim arrayClass As clsBunchOfArrays = CType(binFormat.Deserialize(fStream), clsBunchOfArrays)
-    '    fStream.Close()
-
-    '    TestArray1 = arrayClass.BasicRoad
-    '    TestArray2 = arrayClass.grassMap
-    '    TestArray3 = arrayClass.SpriteMap
-
-    '    fillMatrix(theOneMatrix, TestArray1, SpriteMap)
-
-
-    'End Sub
-#End Region
 
     Private Function CheckIfBorder(ByVal Location As Point) As Boolean
         If Location.X = 0 Or Location.X = 15 Or Location.Y = 0 Or Location.Y = 15 Then
@@ -650,9 +559,7 @@ Public Class SimplifiedForm
             Return False
         End If
     End Function
-    'Generer l'ebauche d'un plan pour initier les transitions. 
-    'Could make it that if the array has anything else than 0, its going to be a transition. Values are the GoingTo Value, instead of hardcoding the 
-    'values in the 
+
     Private Sub GenerateTransitions(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
         Dim iCounter As Integer
         For COL As Integer = Matrix.GetLowerBound(0) To Matrix.GetUpperBound(0)
@@ -672,7 +579,6 @@ Public Class SimplifiedForm
         fillMatrix(Matrix, Map)
         GenerateTransitions(theOneMatrix, Map)
         showMatrix(Matrix)
-        'Matrix(Map.Position.X, Map.Position.Y).Image = Nothing 'Needed anymore ?
         addHero(Matrix, Map)
 
 
@@ -741,27 +647,5 @@ Public Class SimplifiedForm
 
         End Select
     End Sub
-
-    Public Sub TEST(ByVal Border As Boolean, ByVal Transition As Boolean)
-        If Border = False And Transition = False Then
-            'Walk normaly
-
-        ElseIf Border = False And Transition = True Then
-            'Door transition
-
-        ElseIf Border = True And Transition = False Then
-            'Walk normaly
-
-        ElseIf Border = True And Transition = True Then
-            'Transition IF the right buttun is presses
-
-        Else
-            'Walk normaly
-
-        End If
-
-    End Sub
-
-
 
 End Class
