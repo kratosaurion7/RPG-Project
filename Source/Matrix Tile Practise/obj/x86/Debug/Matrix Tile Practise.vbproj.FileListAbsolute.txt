@@ -68,3 +68,25 @@ C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Pr
 C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\Source\Matrix Tile Practise\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.exe
 C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\Source\Matrix Tile Practise\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.xml
 C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\Source\Matrix Tile Practise\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.pdb
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\Matrix Tile Practise.exe.config
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.exe
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.xml
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.pdb
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\DLL\MessageBar_Console.dll
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\Matrix Tile Practise.exe.manifest
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\Matrix Tile Practise.application
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\Matrix Tile Practise.exe
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\Matrix Tile Practise.pdb
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\Matrix Tile Practise.xml
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\bin\Debug\MessageBar_Console.dll
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\ResolveAssemblyReference.cache
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix_Tile_Practise.clsDialogMenu.resources
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix_Tile_Practise.frmCaracter_and_Equipement.resources
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix_Tile_Practise.frmMainMenu.resources
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix_Tile_Practise.frmMap.resources
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix_Tile_Practise.Resources.resources
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix_Tile_Practise.SimplifiedForm.resources
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\GenerateResource.read.1.tlog
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\GenerateResource.write.1.tlog
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.exe.manifest
+C:\Users\Leroux\Documents\Visual Studio 2010\Projects\TFS_Root\Production\RPG_Project\Alpha Builds\RPG-Project.git\Source\Matrix Tile Practise\obj\x86\Debug\Matrix Tile Practise.application

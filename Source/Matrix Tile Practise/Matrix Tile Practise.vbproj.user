@@ -2,7 +2,7 @@
 <Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
   <PropertyGroup>
     <ProjectView>ProjectFiles</ProjectView>
-    <PublishUrlHistory>publish\</PublishUrlHistory>
+    <PublishUrlHistory>C:\Users\Leroux\Desktop\PublishTest\|ftp://ftpped.cmaisonneuve.qc.ca/eleves/e0823360/www/lerouxtech_v2/files/|ftp://ftpped.cmaisonneuve.qc.ca/eleves/e0823360/|publish\</PublishUrlHistory>
     <InstallUrlHistory />
     <SupportUrlHistory />
     <UpdateUrlHistory />

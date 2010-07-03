@@ -574,7 +574,7 @@ Public Class SimplifiedForm
 
     Private Sub SimplifiedForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
-        '######## Part 0 - Init ########         'Should put that in a sub ?
+        '######## Part 0 - Init ########
         BasicRoad.initSurroundings(, Village, GrassyKnoll, ) : BasicRoad.Position = testStartingPosition
         Village.initSurroundings(, , , BasicRoad) : Village.Position = New Point(0, 9)
         GrassyKnoll.initSurroundings(BasicRoad, , Village, ) : GrassyKnoll.Position = New Point(5, 15)

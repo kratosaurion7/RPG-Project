@@ -6,81 +6,10 @@ MatrixTilePractise
 </name>
 </assembly>
 <members>
-<member name="M:Matrix_Tile_Practise.clsBob_Omb.#ctor(System.String,System.Drawing.Point)">
+<member name="M:Matrix_Tile_Practise.clsTile.#ctor">
 	<summary>
- Give the object a name, a location and a generic dialog text.
+ Default constructor, runs the default picturebox constructor also.
  </summary>
-	<param name="npcName">Name of the object</param>
-	<param name="npcLocation">Location of the object.</param>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsMegaman.#ctor(System.String,System.Drawing.Point)">
-	<summary>
- Give the object a name, a location and a generic dialog text.
- </summary>
-	<param name="npcName">Name of the object</param>
-	<param name="npcLocation">Location of the object.</param>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.init">
-	<summary>
- Generate the controls associated to the form
- </summary>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.changeText(System.String)">
-	<summary>
- Change the text
- </summary>
-	<param name="newText"></param>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.showDialogPanel(System.String)">
-	<summary>
- Changes the visible and enabled property to true
- </summary>
-	<param name="text"></param>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.hideDialogPanel">
-	<summary>
- Changes the visible and enabled property to false.
- </summary>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.#ctor">
-	<summary>
- Default constructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsTerrain.#ctor">
-	<summary>
- Default constructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsTerrain.#ctor(System.String,System.Array,System.Array,System.Array)">
-	<summary>
- Give the object a name, an grid of tiles, a grid of sprites and a grid of transitions from arrays.
- </summary>
-	<param name="Name">Name of the map</param>
-	<param name="grid">Array of numbers that can be translated into tile images.</param>
-	<param name="sprites">Array of numbers that can be translated into sprites images</param>
-	<param name="transitions">Array of numbers that can be translated into boolean values indicating a transition</param>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsTerrain.initSurroundings(Matrix_Tile_Practise.clsTerrain,Matrix_Tile_Practise.clsTerrain,Matrix_Tile_Practise.clsTerrain,Matrix_Tile_Practise.clsTerrain)">
-	<summary>
- Initializes the map's physical neighboors
- </summary>
-	<param name="top">Map to the top of the current map</param>
-	<param name="right">Map to the right of the current map</param>
-	<param name="bottom">Map to the bottom of the current map</param>
-	<param name="left">Map to the left of the current map</param>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsNPC.#ctor">
-	<summary>
- Defautl constructor
- </summary>
-	<remarks></remarks>
-</member><member name="M:Matrix_Tile_Practise.clsNPC.#ctor(System.String,System.Drawing.Point)">
-	<summary>
- Gives the object a name and a location
- </summary>
-	<param name="npcName"></param>
-	<param name="npcLocation"></param>
 	<remarks></remarks>
 </member><member name="P:Matrix_Tile_Practise.My.Resources.Resources.ResourceManager">
 	<summary>
@@ -166,9 +95,80 @@ MatrixTilePractise
 	<param name="sender"></param>
 	<param name="e"></param>
 	<remarks>Here, note that I did not New() each form as they appear. Only need one instance of a form. Or at least a single instance shown at once.</remarks>
-</member><member name="M:Matrix_Tile_Practise.clsTile.#ctor">
+</member><member name="M:Matrix_Tile_Practise.clsBob_Omb.#ctor(System.String,System.Drawing.Point)">
 	<summary>
- Default constructor, runs the default picturebox constructor also.
+ Give the object a name, a location and a generic dialog text.
+ </summary>
+	<param name="npcName">Name of the object</param>
+	<param name="npcLocation">Location of the object.</param>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsNPC.#ctor">
+	<summary>
+ Defautl constructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsNPC.#ctor(System.String,System.Drawing.Point)">
+	<summary>
+ Gives the object a name and a location
+ </summary>
+	<param name="npcName"></param>
+	<param name="npcLocation"></param>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsTerrain.#ctor">
+	<summary>
+ Default constructor
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsTerrain.#ctor(System.String,System.Array,System.Array,System.Array)">
+	<summary>
+ Give the object a name, an grid of tiles, a grid of sprites and a grid of transitions from arrays.
+ </summary>
+	<param name="Name">Name of the map</param>
+	<param name="grid">Array of numbers that can be translated into tile images.</param>
+	<param name="sprites">Array of numbers that can be translated into sprites images</param>
+	<param name="transitions">Array of numbers that can be translated into boolean values indicating a transition</param>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsTerrain.initSurroundings(Matrix_Tile_Practise.clsTerrain,Matrix_Tile_Practise.clsTerrain,Matrix_Tile_Practise.clsTerrain,Matrix_Tile_Practise.clsTerrain)">
+	<summary>
+ Initializes the map's physical neighboors
+ </summary>
+	<param name="top">Map to the top of the current map</param>
+	<param name="right">Map to the right of the current map</param>
+	<param name="bottom">Map to the bottom of the current map</param>
+	<param name="left">Map to the left of the current map</param>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsMegaman.#ctor(System.String,System.Drawing.Point)">
+	<summary>
+ Give the object a name, a location and a generic dialog text.
+ </summary>
+	<param name="npcName">Name of the object</param>
+	<param name="npcLocation">Location of the object.</param>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.init">
+	<summary>
+ Generate the controls associated to the form
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.changeText(System.String)">
+	<summary>
+ Change the text
+ </summary>
+	<param name="newText"></param>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.showDialogPanel(System.String)">
+	<summary>
+ Changes the visible and enabled property to true
+ </summary>
+	<param name="text"></param>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.hideDialogPanel">
+	<summary>
+ Changes the visible and enabled property to false.
+ </summary>
+	<remarks></remarks>
+</member><member name="M:Matrix_Tile_Practise.clsDialogMenu.#ctor">
+	<summary>
+ Default constructor
  </summary>
 	<remarks></remarks>
 </member>
