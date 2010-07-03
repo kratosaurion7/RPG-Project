@@ -1,0 +1,3 @@
+﻿Idea:
+The (15, 15) grid looks a bit huge. This could be the overhead map, the big one. While when you enter a building it gets
+smaller and the tiles look bigger. Maybe half the size with the tiles twice as big.

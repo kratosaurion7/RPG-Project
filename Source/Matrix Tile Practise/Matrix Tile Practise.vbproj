@@ -1,0 +1,263 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">x86</Platform>
+    <ProductVersion>
+    </ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{E4EA4346-B7F7-4258-971D-FE2599154088}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <StartupObject>Matrix_Tile_Practise.My.MyApplication</StartupObject>
+    <RootNamespace>Matrix_Tile_Practise</RootNamespace>
+    <AssemblyName>Matrix Tile Practise</AssemblyName>
+    <FileAlignment>512</FileAlignment>
+    <MyType>WindowsForms</MyType>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <TargetFrameworkProfile>Client</TargetFrameworkProfile>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+    <IsWebBootstrapper>false</IsWebBootstrapper>
+    <PublishUrl>publish\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Disk</InstallFrom>
+    <UpdateEnabled>false</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <ApplicationRevision>0</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineDebug>true</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DocumentationFile>Matrix Tile Practise.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|x86' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <DefineDebug>false</DefineDebug>
+    <DefineTrace>true</DefineTrace>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DocumentationFile>Matrix Tile Practise.xml</DocumentationFile>
+    <NoWarn>42016,41999,42017,42018,42019,42032,42036,42020,42021,42022</NoWarn>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionExplicit>On</OptionExplicit>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionCompare>Binary</OptionCompare>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionStrict>Off</OptionStrict>
+  </PropertyGroup>
+  <PropertyGroup>
+    <OptionInfer>On</OptionInfer>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignAssembly>false</SignAssembly>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MessageBar_Console, Version=1.0.3778.27421, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>DLL\MessageBar_Console.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Drawing" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Windows.Forms" />
+    <Import Include="System.Linq" />
+    <Import Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Classes\Character Classes\clsBob-Omb.vb" />
+    <Compile Include="Classes\Character Classes\clsMegaman.vb" />
+    <Compile Include="Classes\Environement Classes\Tile Classes\clsTerrain.vb" />
+    <Compile Include="Classes\Character Classes\clsNPC.vb" />
+    <Compile Include="Classes\Environement Classes\Tile Classes\clsTile.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\clsDialogMenu.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Equipment Classes\GUI\Equip_Slot.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Classes\Equipment Classes\GUI\ItemSlot.vb">
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Menus\Caracter_and_Equipement.Designer.vb">
+      <DependentUpon>Caracter_and_Equipement.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Caracter_and_Equipement.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\MainMenu.Designer.vb">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\MainMenu.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Menus\Map.Designer.vb">
+      <DependentUpon>Map.vb</DependentUpon>
+    </Compile>
+    <Compile Include="Menus\Map.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="My Project\AssemblyInfo.vb" />
+    <Compile Include="My Project\Application.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Application.myapp</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Resources.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="My Project\Settings.Designer.vb">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <Compile Include="SimplifiedForm.Designer.vb">
+      <DependentUpon>SimplifiedForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="SimplifiedForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Classes\clsDialogMenu.resx">
+      <DependentUpon>clsDialogMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Caracter_and_Equipement.resx">
+      <DependentUpon>Caracter_and_Equipement.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\MainMenu.resx">
+      <DependentUpon>MainMenu.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Menus\Map.resx">
+      <DependentUpon>Map.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="My Project\Resources.resx">
+      <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.vb</LastGenOutput>
+      <CustomToolNamespace>My.Resources</CustomToolNamespace>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SimplifiedForm.resx">
+      <DependentUpon>SimplifiedForm.vb</DependentUpon>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="app.config" />
+    <None Include="Fonts\AngelicWar.otf" />
+    <None Include="Fonts\AngelicWar.ttf" />
+    <None Include="My Project\Application.myapp">
+      <Generator>MyApplicationCodeGenerator</Generator>
+      <LastGenOutput>Application.Designer.vb</LastGenOutput>
+    </None>
+    <None Include="My Project\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <CustomToolNamespace>My</CustomToolNamespace>
+      <LastGenOutput>Settings.Designer.vb</LastGenOutput>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GrassTile2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Test_Tile%282%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Up_Down.Road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Crossroad.Road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\left_right.Road.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Design\Arrays.txt" />
+    <Content Include="Design\Map-Area.txt" />
+    <Content Include="DLL\MessageBar_Console.dll">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <None Include="Resources\Wood_Wall1.png" />
+    <None Include="Resources\roof_Wood_Wall1.png" />
+    <None Include="Resources\Door2.png" />
+    <None Include="Resources\bottom_Wood_Wall1.png" />
+    <None Include="Resources\Roof1.png" />
+    <None Include="Resources\HousePart1.png" />
+    <None Include="Resources\Door1.png" />
+    <None Include="Resources\small_mario.png" />
+    <None Include="Resources\red_koopa.png" />
+    <None Include="Resources\mario.png" />
+    <None Include="Resources\bob-omb.png" />
+    <None Include="Resources\Link.png" />
+    <None Include="Resources\Test_caracter2.png" />
+    <None Include="Resources\Test_caracter1.png" />
+    <None Include="Resources\Megaman.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include=".NETFramework,Version=v4.0,Profile=Client">
+      <Visible>False</Visible>
+      <ProductName>Microsoft .NET Framework 4 Client Profile %28x86 and x64%29</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Client.3.5">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1 Client Profile</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>false</Install>
+    </BootstrapperPackage>
+    <BootstrapperPackage Include="Microsoft.Windows.Installer.3.1">
+      <Visible>False</Visible>
+      <ProductName>Windows Installer 3.1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Classes\Equipment Classes\BackEnd\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

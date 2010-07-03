@@ -1,4 +1,4 @@
-﻿Public Class clsDialogMenu
+﻿Public Class clsDialogMenu 'I'm keeping this in case I need to make a small popup sometimes.
     Inherits Panel
 
     Dim btnOK As New Button
@@ -7,6 +7,10 @@
 
     Dim myForm As Form
 
+    ''' <summary>
+    ''' Generate the controls associated to the form
+    ''' </summary>
+    ''' <remarks></remarks>
     Private Sub init()
 
         myForm = Me.FindForm
@@ -24,24 +28,34 @@
         btnOK.Size = New Size(75, 23)
         btnOK.Text = "Ok"
 
-        ' TODO: Add a handler to close the conversation when clicked NO, so we can move again. Addhandler ?
+
         btnNO.Parent = Me
         btnNO.Location = New Point(196, 70)
         btnNO.Size = New Size(75, 23)
         btnNO.Text = "No"
-
+        AddHandler btnNO.Click, AddressOf hideDialogPanel
 
         lblText.Parent = Me
         lblText.Location = New Point(12, 12)
         lblText.Text = "This is a test"
+        lblText.Width = Me.Width
 
     End Sub
 
-
+    ''' <summary>
+    ''' Change the text
+    ''' </summary>
+    ''' <param name="newText"></param>
+    ''' <remarks></remarks>
     Public Sub changeText(ByVal newText As String)
         lblText.Text = newText
     End Sub
 
+    ''' <summary>
+    ''' Changes the visible and enabled property to true
+    ''' </summary>
+    ''' <param name="text"></param>
+    ''' <remarks></remarks>
     Public Sub showDialogPanel(ByVal text As String)
         changeText(text)
         Me.Visible = True
@@ -49,11 +63,19 @@
 
     End Sub
 
+    ''' <summary>
+    ''' Changes the visible and enabled property to false.
+    ''' </summary>
+    ''' <remarks></remarks>
     Public Sub hideDialogPanel()
         Me.Enabled = False
         Me.Visible = False
     End Sub
 
+    ''' <summary>
+    ''' Default constructor
+    ''' </summary>
+    ''' <remarks></remarks>
     Public Sub New()
         init()
     End Sub
