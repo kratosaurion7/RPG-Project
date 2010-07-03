@@ -326,40 +326,30 @@ Public Class SimplifiedForm
         Matrix(Map.Position.X, Map.Position.Y).Image = Nothing
     End Sub
 
-    'Private Sub chtrMove(ByVal pDirection As Direction)
-    '    If pDirection = Direction.Up Then
-
-    '    ElseIf pDirection = Direction.Down Then
-    '    ElseIf pDirection = Direction.Left Then
-    '    ElseIf pDirection = Direction.Right Then
-    '    End If
-
-    'End Sub
-
     Private Sub MoveUp(ByRef Matrix(,) As clsTile, ByRef Map As clsTerrain)
-        Dim HeroPOS As Point = Map.Position
-        If CheckIfBorder(HeroPOS) = False Then
-            If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then 'TODO: If on the border, checking the -1 result as an out of bound error. Need to find a way to check if an error is going to pop. Try catch ?
-                Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link
-                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
-                HeroPOS.Y -= 1
-                Map.Position = HeroPOS
-            Else
-                If Matrix(HeroPOS.X, HeroPOS.Y - 1).isNPC = True Then
-                    SayStuff(Matrix(HeroPOS.X, HeroPOS.Y - 1).caracter.Conversation)
+        Dim HeroPOS As Point = Map.Position 'HeroPOS is a shortcut, so instead of having Map.Position.Y we have HeroPOS.Y
+        If CheckIfBorder(HeroPOS) = False Then 'Only enters if the hero is outside the border
+            If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then 'Checks the tile above the hero
+                Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link 'If its nothing, place the hero on said tile
+                Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing 'Remvove the hero from the previous tile.
+                HeroPOS.Y -= 1 'Update the position of our hero
+                Map.Position = HeroPOS 'Gives back the modified coordinates to the variable
+            Else 'If there IS something on the tile:
+                If Matrix(HeroPOS.X, HeroPOS.Y - 1).isNPC = True Then 'And its an NPC
+                    SayStuff(Matrix(HeroPOS.X, HeroPOS.Y - 1).caracter.Conversation) 'Initiate conversation
                 End If
             End If
-        Else
+        Else 'If we are on the border tiles
             If HeroPOS.Y - 1 < 0 And _
-                                Matrix(HeroPOS.X, HeroPOS.Y).IsTransition Then
-                If Map.ToTheTop Is Nothing = False Then
-                    currentMap = Map.ToTheTop
-                    currentMap.Position = New Point(HeroPOS.X, HeroPOS.Y + 15)
-                    RemoveAndApplyTileSet(theOneMatrix, currentMap)
+                                Matrix(HeroPOS.X, HeroPOS.Y).IsTransition Then 'If the tile we are on is a transition
+                If Map.ToTheTop Is Nothing = False Then 'If there is a map on top of us
+                    currentMap = Map.ToTheTop 'Updates our current map to the one on top
+                    currentMap.Position = New Point(HeroPOS.X, HeroPOS.Y + 15) 'Change our position from top tile to bottom tile
+                    RemoveAndApplyTileSet(theOneMatrix, currentMap) 'Execute the transition
                 End If
-            Else
-                Try
-                    If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then 'Exits here, exeption: Index Out of Range
+            Else 'If we're not on a transition
+                Try 'TryCatch to protect from the IndexOutofRange
+                    If Matrix(HeroPOS.X, HeroPOS.Y - 1).Image Is Nothing Then
                         Matrix(HeroPOS.X, HeroPOS.Y - 1).Image = My.Resources.Link
                         Matrix(HeroPOS.X, HeroPOS.Y).Image = Nothing
                         HeroPOS.Y -= 1
@@ -369,7 +359,7 @@ Public Class SimplifiedForm
                             SayStuff(Matrix(HeroPOS.X, HeroPOS.Y - 1).caracter.Conversation)
                         End If
                     End If
-                Catch exeption As IndexOutOfRangeException
+                Catch exeption As IndexOutOfRangeException 'Shows blocked when we try to go out of the map.
                     CtrMessageBar1.AddMSG("Blocked !")
                 End Try
             End If
