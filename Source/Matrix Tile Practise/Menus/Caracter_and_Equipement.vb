@@ -1,6 +1,6 @@
 ﻿Public Class frmCaracter_and_Equipement
 
-    Private Sub Panel1_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles Panel1.Resize
+    Private Sub Panel1_Resize(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles pnlInventory.Resize
         Me.Text = Me.Size.ToString
     End Sub
 

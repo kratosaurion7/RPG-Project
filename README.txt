@@ -1,7 +1,7 @@
 ######## -=README 0.3=- ########
 
 1. -----DESCRIPTION OF THE PROJECT -----
-This is a simple project I'm doing to have fun, these are NOT the game files. These files are simply tools to help me figure out how I will proceed with making the game.
+This is a simple project I'm doing to have fun, these are NOT the game files. These files are simply tools to help me figure out how I will proceed with making the game. I will make another version with better graphics, story and items when I feel I got enough know-how.
 
 2. -----GOALS-----
 I want to have at least 30 minutes of content included in the game. How the hell I'm going to dish out that much content, I have no idea. Maybe I should make extra long loading screens  *grin*. 
@@ -26,7 +26,6 @@ How To Report a bug:
 4. OPTIONAL You name and/or email so I can get back to you.
 	
 5. Send all of this to tristan.dube@gmail.com
-	
 	
 	
 	ex: 

@@ -1,5 +1,5 @@
 ﻿Imports System.IO
-Public Class SimplifiedForm
+Public Class frmSimplifiedForm
 #Region "Arrays"
 
 #Region "BasicRoad"
@@ -360,7 +360,7 @@ Public Class SimplifiedForm
                         End If
                     End If
                 Catch exeption As IndexOutOfRangeException 'Shows blocked when we try to go out of the map.
-                    CtrMessageBar1.AddMSG("Blocked !")
+                    ctrMessageBar.AddMSG("Blocked !")
                 End Try
             End If
         End If
@@ -401,7 +401,7 @@ Public Class SimplifiedForm
                         End If
                     End If
                 Catch exeption As IndexOutOfRangeException
-                    CtrMessageBar1.AddMSG("Blocked !")
+                    ctrMessageBar.AddMSG("Blocked !")
                 End Try
             End If
         End If
@@ -442,7 +442,7 @@ Public Class SimplifiedForm
                         End If
                     End If
                 Catch exeption As IndexOutOfRangeException
-                    CtrMessageBar1.AddMSG("Blocked !")
+                    ctrMessageBar.AddMSG("Blocked !")
                 End Try
             End If
         End If
@@ -483,7 +483,7 @@ Public Class SimplifiedForm
                         End If
                     End If
                 Catch exeption As IndexOutOfRangeException
-                    CtrMessageBar1.AddMSG("Blocked !")
+                    ctrMessageBar.AddMSG("Blocked !")
                 End Try
             End If
         End If
@@ -532,7 +532,7 @@ Public Class SimplifiedForm
     ''' <param name="Map"></param>
     ''' <remarks>This actually DELETES every tile and re-do the fill and show pair of subs</remarks>
     Private Sub RemoveAndApplyTileSet(ByVal Matrix(,) As clsTile, ByVal Map As clsTerrain)
-        RemoveTiles
+        RemoveTiles()
         fillMatrix(Matrix, Map)
         GenerateTransitions(theOneMatrix, Map)
         showMatrix(Matrix)
@@ -559,7 +559,7 @@ Public Class SimplifiedForm
     ''' </summary>
     ''' <remarks></remarks>
     Public Sub maintenance()
-        CtrMessageBar1.ReplaceCaret()
+        ctrMessageBar.ReplaceCaret()
     End Sub
 
     ''' <summary>
@@ -568,8 +568,8 @@ Public Class SimplifiedForm
     ''' <param name="theMessage">Text to show in the messagebar</param>
     ''' <remarks></remarks>
     Private Sub SayStuff(ByVal theMessage As String)
-        CtrMessageBar1.AddMSG(theMessage)
-        CtrMessageBar1.ReplaceCaret()
+        ctrMessageBar.AddMSG(theMessage)
+        ctrMessageBar.ReplaceCaret()
     End Sub
 
     Private Sub SimplifiedForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load

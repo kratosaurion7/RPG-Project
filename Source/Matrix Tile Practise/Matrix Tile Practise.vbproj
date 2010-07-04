@@ -92,6 +92,7 @@
       <HintPath>DLL\MessageBar_Console.dll</HintPath>
     </Reference>
     <Reference Include="System" />
+    <Reference Include="System.Data" />
     <Reference Include="System.Drawing" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
@@ -111,6 +112,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Classes\Character Classes\clsBob-Omb.vb" />
+    <Compile Include="Classes\Character Classes\clsPlayer.vb" />
     <Compile Include="Classes\Character Classes\clsMegaman.vb" />
     <Compile Include="Classes\Environement Classes\Tile Classes\clsTerrain.vb" />
     <Compile Include="Classes\Character Classes\clsNPC.vb" />
@@ -126,6 +128,7 @@
     <Compile Include="Classes\Equipment Classes\GUI\ItemSlot.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="main.vb" />
     <Compile Include="Menus\Caracter_and_Equipement.Designer.vb">
       <DependentUpon>Caracter_and_Equipement.vb</DependentUpon>
     </Compile>
@@ -193,7 +196,6 @@
     <None Include="app.config" />
     <None Include="Fonts\AngelicWar.otf" />
     <None Include="Fonts\AngelicWar.ttf" />
-    <None Include="Matrix Tile Practise_TemporaryKey.pfx" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
       <LastGenOutput>Application.Designer.vb</LastGenOutput>
@@ -225,6 +227,7 @@
     <Content Include="DLL\MessageBar_Console.dll">
       <CopyToOutputDirectory>Always</CopyToOutputDirectory>
     </Content>
+    <None Include="Resources\WoodPlanksBare0012_1_thumbhuge.jpg" />
     <None Include="Resources\Wood_Wall1.png" />
     <None Include="Resources\roof_Wood_Wall1.png" />
     <None Include="Resources\Door2.png" />

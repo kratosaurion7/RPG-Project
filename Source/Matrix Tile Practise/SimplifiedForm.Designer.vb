@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class SimplifiedForm
+Partial Class frmSimplifiedForm
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -22,24 +22,24 @@ Partial Class SimplifiedForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SimplifiedForm))
-        Me.CtrMessageBar1 = New MessageBar_Console.ctrMessageBar()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(frmSimplifiedForm))
+        Me.ctrMessageBar = New MessageBar_Console.ctrMessageBar()
         Me.stripInfoBar = New System.Windows.Forms.StatusStrip()
-        Me.stripMainMenu = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.stripCaracter = New System.Windows.Forms.ToolStripStatusLabel()
         Me.stripMap = New System.Windows.Forms.ToolStripDropDownButton()
         Me.GlobalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.LocalToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.stripCaracter = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.stripMainMenu = New System.Windows.Forms.ToolStripStatusLabel()
         Me.stripInfoBar.SuspendLayout()
         Me.SuspendLayout()
         '
-        'CtrMessageBar1
+        'ctrMessageBar
         '
-        Me.CtrMessageBar1.Dock = System.Windows.Forms.DockStyle.Bottom
-        Me.CtrMessageBar1.Location = New System.Drawing.Point(0, 534)
-        Me.CtrMessageBar1.Name = "CtrMessageBar1"
-        Me.CtrMessageBar1.Size = New System.Drawing.Size(509, 50)
-        Me.CtrMessageBar1.TabIndex = 0
+        Me.ctrMessageBar.Dock = System.Windows.Forms.DockStyle.Bottom
+        Me.ctrMessageBar.Location = New System.Drawing.Point(0, 534)
+        Me.ctrMessageBar.Name = "ctrMessageBar"
+        Me.ctrMessageBar.Size = New System.Drawing.Size(509, 50)
+        Me.ctrMessageBar.TabIndex = 0
         '
         'stripInfoBar
         '
@@ -50,11 +50,11 @@ Partial Class SimplifiedForm
         Me.stripInfoBar.SizingGrip = False
         Me.stripInfoBar.TabIndex = 1
         '
-        'stripMainMenu
+        'stripCaracter
         '
-        Me.stripMainMenu.Name = "stripMainMenu"
-        Me.stripMainMenu.Size = New System.Drawing.Size(68, 17)
-        Me.stripMainMenu.Text = "Main Menu"
+        Me.stripCaracter.Name = "stripCaracter"
+        Me.stripCaracter.Size = New System.Drawing.Size(51, 17)
+        Me.stripCaracter.Text = "Caracter"
         '
         'stripMap
         '
@@ -69,30 +69,30 @@ Partial Class SimplifiedForm
         'GlobalToolStripMenuItem
         '
         Me.GlobalToolStripMenuItem.Name = "GlobalToolStripMenuItem"
-        Me.GlobalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.GlobalToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.GlobalToolStripMenuItem.Text = "Global"
         '
         'LocalToolStripMenuItem
         '
         Me.LocalToolStripMenuItem.Name = "LocalToolStripMenuItem"
-        Me.LocalToolStripMenuItem.Size = New System.Drawing.Size(152, 22)
+        Me.LocalToolStripMenuItem.Size = New System.Drawing.Size(108, 22)
         Me.LocalToolStripMenuItem.Text = "Local"
         '
-        'stripCaracter
+        'stripMainMenu
         '
-        Me.stripCaracter.Name = "stripCaracter"
-        Me.stripCaracter.Size = New System.Drawing.Size(51, 17)
-        Me.stripCaracter.Text = "Caracter"
+        Me.stripMainMenu.Name = "stripMainMenu"
+        Me.stripMainMenu.Size = New System.Drawing.Size(68, 17)
+        Me.stripMainMenu.Text = "Main Menu"
         '
-        'SimplifiedForm
+        'frmSimplifiedForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(509, 584)
         Me.Controls.Add(Me.stripInfoBar)
-        Me.Controls.Add(Me.CtrMessageBar1)
+        Me.Controls.Add(Me.ctrMessageBar)
         Me.KeyPreview = True
-        Me.Name = "SimplifiedForm"
+        Me.Name = "frmSimplifiedForm"
         Me.Text = "SimplifiedForm"
         Me.stripInfoBar.ResumeLayout(False)
         Me.stripInfoBar.PerformLayout()
@@ -100,7 +100,7 @@ Partial Class SimplifiedForm
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents CtrMessageBar1 As MessageBar_Console.ctrMessageBar
+    Friend WithEvents ctrMessageBar As MessageBar_Console.ctrMessageBar
     Friend WithEvents stripInfoBar As System.Windows.Forms.StatusStrip
     Friend WithEvents stripMap As System.Windows.Forms.ToolStripDropDownButton
     Friend WithEvents GlobalToolStripMenuItem As System.Windows.Forms.ToolStripMenuItem
