@@ -1,10 +1,10 @@
 ﻿Public Class clsPlayer
     '///// Player stuff \\\\\
-    Dim pcname As String
-    Dim pclevel As Integer
-    Dim pcsprite As Image
+    Public pcname As String
+    Public pclevel As Integer
+    Public pcsprite As Image
+    Public pcClass As clsClass
     '///// Background stuff \\\\\
-    Dim outputBox As MessageBar_Console.ctrMessageBar
 
 #Region "Stats"
     Dim pcStrength
@@ -21,16 +21,14 @@
 
     Public Sub levelUp()
         pclevel += 1
-        Dim message As String = pcname + " has leveled ! You are now lv" + pclevel
-        outputBox.AddMSG(message)
+        Dim message As String = pcname + " has leveled ! You are now lv" + pclevel 'Need to process this message into the messagebar.
     End Sub
 
     Public Sub changeLevel(ByVal newLevel As Integer)
         pclevel = newLevel
     End Sub
 
-    Public Sub New(ByRef paramOutputBox As MessageBar_Console.ctrMessageBar)
-        outputBox = paramOutputBox
+    Public Sub New()
         pcsprite = My.Resources.Link
     End Sub
 
