@@ -22,131 +22,67 @@ Partial Class frmCaracter_and_Equipement
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Me.lblHeroName = New System.Windows.Forms.Label()
-        Me.GroupBox1 = New System.Windows.Forms.GroupBox()
-        Me.eqpHands = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpNecklace = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpOffHand = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpHead = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpMainHand = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpLegs = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpChest = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpRing2 = New Matrix_Tile_Practise.Equip_Slot()
-        Me.eqpRing1 = New Matrix_Tile_Practise.Equip_Slot()
+        Me.grpCharacter = New System.Windows.Forms.GroupBox()
         Me.pnlInventory = New System.Windows.Forms.Panel()
         Me.grpInfo = New System.Windows.Forms.GroupBox()
         Me.grpStats = New System.Windows.Forms.GroupBox()
-        Me.GroupBox1.SuspendLayout()
+        Me.lblClass = New System.Windows.Forms.Label()
+        Me.Label16 = New System.Windows.Forms.Label()
+        Me.Label15 = New System.Windows.Forms.Label()
+        Me.lblCha = New System.Windows.Forms.Label()
+        Me.lblWis = New System.Windows.Forms.Label()
+        Me.lblInt = New System.Windows.Forms.Label()
+        Me.lblCon = New System.Windows.Forms.Label()
+        Me.lblDex = New System.Windows.Forms.Label()
+        Me.lblStr = New System.Windows.Forms.Label()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Label4 = New System.Windows.Forms.Label()
+        Me.lblLevel = New System.Windows.Forms.Label()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.lblHeroName = New System.Windows.Forms.Label()
+        Me.eqpHands = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpRing2 = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpRing1 = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpNecklace = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpOffHand = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpMainHand = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpLegs = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpTorso = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpHead = New Matrix_Tile_Practise.ItemSlot()
+        Me.grpCharacter.SuspendLayout()
+        Me.grpStats.SuspendLayout()
         CType(Me.eqpHands, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.eqpNecklace, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.eqpOffHand, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.eqpHead, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.eqpMainHand, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.eqpLegs, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.eqpChest, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eqpRing2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eqpRing1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eqpNecklace, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eqpOffHand, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eqpMainHand, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eqpLegs, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eqpTorso, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.eqpHead, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'lblHeroName
+        'grpCharacter
         '
-        Me.lblHeroName.AutoSize = True
-        Me.lblHeroName.Font = New System.Drawing.Font("Angelic War", 36.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
-        Me.lblHeroName.Location = New System.Drawing.Point(133, 9)
-        Me.lblHeroName.Name = "lblHeroName"
-        Me.lblHeroName.Size = New System.Drawing.Size(304, 64)
-        Me.lblHeroName.TabIndex = 0
-        Me.lblHeroName.Text = "<Hero Name>"
-        '
-        'GroupBox1
-        '
-        Me.GroupBox1.Controls.Add(Me.eqpHands)
-        Me.GroupBox1.Controls.Add(Me.eqpNecklace)
-        Me.GroupBox1.Controls.Add(Me.eqpOffHand)
-        Me.GroupBox1.Controls.Add(Me.eqpHead)
-        Me.GroupBox1.Controls.Add(Me.eqpMainHand)
-        Me.GroupBox1.Controls.Add(Me.eqpLegs)
-        Me.GroupBox1.Controls.Add(Me.eqpChest)
-        Me.GroupBox1.Controls.Add(Me.eqpRing2)
-        Me.GroupBox1.Controls.Add(Me.eqpRing1)
-        Me.GroupBox1.Location = New System.Drawing.Point(12, 76)
-        Me.GroupBox1.Name = "GroupBox1"
-        Me.GroupBox1.Size = New System.Drawing.Size(335, 334)
-        Me.GroupBox1.TabIndex = 1
-        Me.GroupBox1.TabStop = False
-        Me.GroupBox1.Text = "Equipment"
-        '
-        'eqpHands
-        '
-        Me.eqpHands.Location = New System.Drawing.Point(40, 103)
-        Me.eqpHands.Name = "eqpHands"
-        Me.eqpHands.Size = New System.Drawing.Size(64, 64)
-        Me.eqpHands.TabIndex = 8
-        Me.eqpHands.TabStop = False
-        '
-        'eqpNecklace
-        '
-        Me.eqpNecklace.Location = New System.Drawing.Point(180, 33)
-        Me.eqpNecklace.Name = "eqpNecklace"
-        Me.eqpNecklace.Size = New System.Drawing.Size(64, 64)
-        Me.eqpNecklace.TabIndex = 7
-        Me.eqpNecklace.TabStop = False
-        '
-        'eqpOffHand
-        '
-        Me.eqpOffHand.Location = New System.Drawing.Point(76, 264)
-        Me.eqpOffHand.Name = "eqpOffHand"
-        Me.eqpOffHand.Size = New System.Drawing.Size(64, 64)
-        Me.eqpOffHand.TabIndex = 6
-        Me.eqpOffHand.TabStop = False
-        '
-        'eqpHead
-        '
-        Me.eqpHead.Location = New System.Drawing.Point(110, 33)
-        Me.eqpHead.Name = "eqpHead"
-        Me.eqpHead.Size = New System.Drawing.Size(64, 64)
-        Me.eqpHead.TabIndex = 5
-        Me.eqpHead.TabStop = False
-        '
-        'eqpMainHand
-        '
-        Me.eqpMainHand.Location = New System.Drawing.Point(6, 264)
-        Me.eqpMainHand.Name = "eqpMainHand"
-        Me.eqpMainHand.Size = New System.Drawing.Size(64, 64)
-        Me.eqpMainHand.TabIndex = 4
-        Me.eqpMainHand.TabStop = False
-        '
-        'eqpLegs
-        '
-        Me.eqpLegs.Location = New System.Drawing.Point(110, 173)
-        Me.eqpLegs.Name = "eqpLegs"
-        Me.eqpLegs.Size = New System.Drawing.Size(64, 64)
-        Me.eqpLegs.TabIndex = 3
-        Me.eqpLegs.TabStop = False
-        '
-        'eqpChest
-        '
-        Me.eqpChest.Location = New System.Drawing.Point(110, 103)
-        Me.eqpChest.Name = "eqpChest"
-        Me.eqpChest.Size = New System.Drawing.Size(64, 64)
-        Me.eqpChest.TabIndex = 2
-        Me.eqpChest.TabStop = False
-        '
-        'eqpRing2
-        '
-        Me.eqpRing2.Location = New System.Drawing.Point(265, 103)
-        Me.eqpRing2.Name = "eqpRing2"
-        Me.eqpRing2.Size = New System.Drawing.Size(64, 64)
-        Me.eqpRing2.TabIndex = 1
-        Me.eqpRing2.TabStop = False
-        '
-        'eqpRing1
-        '
-        Me.eqpRing1.Location = New System.Drawing.Point(195, 103)
-        Me.eqpRing1.Name = "eqpRing1"
-        Me.eqpRing1.Size = New System.Drawing.Size(64, 64)
-        Me.eqpRing1.TabIndex = 0
-        Me.eqpRing1.TabStop = False
+        Me.grpCharacter.Controls.Add(Me.eqpHands)
+        Me.grpCharacter.Controls.Add(Me.eqpRing2)
+        Me.grpCharacter.Controls.Add(Me.eqpRing1)
+        Me.grpCharacter.Controls.Add(Me.eqpNecklace)
+        Me.grpCharacter.Controls.Add(Me.eqpOffHand)
+        Me.grpCharacter.Controls.Add(Me.eqpMainHand)
+        Me.grpCharacter.Controls.Add(Me.eqpLegs)
+        Me.grpCharacter.Controls.Add(Me.eqpTorso)
+        Me.grpCharacter.Controls.Add(Me.eqpHead)
+        Me.grpCharacter.Location = New System.Drawing.Point(12, 76)
+        Me.grpCharacter.Name = "grpCharacter"
+        Me.grpCharacter.Size = New System.Drawing.Size(335, 334)
+        Me.grpCharacter.TabIndex = 1
+        Me.grpCharacter.TabStop = False
+        Me.grpCharacter.Text = "Equipment"
         '
         'pnlInventory
         '
@@ -168,6 +104,23 @@ Partial Class frmCaracter_and_Equipement
         '
         'grpStats
         '
+        Me.grpStats.Controls.Add(Me.lblClass)
+        Me.grpStats.Controls.Add(Me.Label16)
+        Me.grpStats.Controls.Add(Me.Label15)
+        Me.grpStats.Controls.Add(Me.lblCha)
+        Me.grpStats.Controls.Add(Me.lblWis)
+        Me.grpStats.Controls.Add(Me.lblInt)
+        Me.grpStats.Controls.Add(Me.lblCon)
+        Me.grpStats.Controls.Add(Me.lblDex)
+        Me.grpStats.Controls.Add(Me.lblStr)
+        Me.grpStats.Controls.Add(Me.Label8)
+        Me.grpStats.Controls.Add(Me.Label7)
+        Me.grpStats.Controls.Add(Me.Label6)
+        Me.grpStats.Controls.Add(Me.Label5)
+        Me.grpStats.Controls.Add(Me.Label4)
+        Me.grpStats.Controls.Add(Me.lblLevel)
+        Me.grpStats.Controls.Add(Me.Label2)
+        Me.grpStats.Controls.Add(Me.Label1)
         Me.grpStats.Location = New System.Drawing.Point(353, 76)
         Me.grpStats.Name = "grpStats"
         Me.grpStats.Size = New System.Drawing.Size(219, 181)
@@ -175,44 +128,299 @@ Partial Class frmCaracter_and_Equipement
         Me.grpStats.TabStop = False
         Me.grpStats.Text = "Hero Stats"
         '
+        'lblClass
+        '
+        Me.lblClass.AutoSize = True
+        Me.lblClass.Location = New System.Drawing.Point(147, 20)
+        Me.lblClass.Name = "lblClass"
+        Me.lblClass.Size = New System.Drawing.Size(54, 13)
+        Me.lblClass.TabIndex = 16
+        Me.lblClass.Text = "<class=x>"
+        '
+        'Label16
+        '
+        Me.Label16.AutoSize = True
+        Me.Label16.Location = New System.Drawing.Point(103, 20)
+        Me.Label16.Name = "Label16"
+        Me.Label16.Size = New System.Drawing.Size(38, 13)
+        Me.Label16.TabIndex = 15
+        Me.Label16.Text = "Class: "
+        '
+        'Label15
+        '
+        Me.Label15.AutoSize = True
+        Me.Label15.Location = New System.Drawing.Point(7, 34)
+        Me.Label15.Name = "Label15"
+        Me.Label15.Size = New System.Drawing.Size(205, 13)
+        Me.Label15.TabIndex = 14
+        Me.Label15.Text = "_________________________________"
+        '
+        'lblCha
+        '
+        Me.lblCha.AutoSize = True
+        Me.lblCha.Location = New System.Drawing.Point(78, 138)
+        Me.lblCha.Name = "lblCha"
+        Me.lblCha.Size = New System.Drawing.Size(49, 13)
+        Me.lblCha.TabIndex = 13
+        Me.lblCha.Text = "<cha=8>"
+        '
+        'lblWis
+        '
+        Me.lblWis.AutoSize = True
+        Me.lblWis.Location = New System.Drawing.Point(78, 121)
+        Me.lblWis.Name = "lblWis"
+        Me.lblWis.Size = New System.Drawing.Size(46, 13)
+        Me.lblWis.TabIndex = 12
+        Me.lblWis.Text = "<wis=8>"
+        '
+        'lblInt
+        '
+        Me.lblInt.AutoSize = True
+        Me.lblInt.Location = New System.Drawing.Point(78, 104)
+        Me.lblInt.Name = "lblInt"
+        Me.lblInt.Size = New System.Drawing.Size(42, 13)
+        Me.lblInt.TabIndex = 11
+        Me.lblInt.Text = "<int=8>"
+        '
+        'lblCon
+        '
+        Me.lblCon.AutoSize = True
+        Me.lblCon.Location = New System.Drawing.Point(78, 87)
+        Me.lblCon.Name = "lblCon"
+        Me.lblCon.Size = New System.Drawing.Size(49, 13)
+        Me.lblCon.TabIndex = 10
+        Me.lblCon.Text = "<con=8>"
+        '
+        'lblDex
+        '
+        Me.lblDex.AutoSize = True
+        Me.lblDex.Location = New System.Drawing.Point(78, 70)
+        Me.lblDex.Name = "lblDex"
+        Me.lblDex.Size = New System.Drawing.Size(48, 13)
+        Me.lblDex.TabIndex = 9
+        Me.lblDex.Text = "<dex=8>"
+        '
+        'lblStr
+        '
+        Me.lblStr.AutoSize = True
+        Me.lblStr.Location = New System.Drawing.Point(78, 53)
+        Me.lblStr.Name = "lblStr"
+        Me.lblStr.Size = New System.Drawing.Size(42, 13)
+        Me.lblStr.TabIndex = 8
+        Me.lblStr.Text = "<str=8>"
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(7, 138)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(50, 13)
+        Me.Label8.TabIndex = 7
+        Me.Label8.Text = "Charisma"
+        '
+        'Label7
+        '
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(7, 121)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(45, 13)
+        Me.Label7.TabIndex = 6
+        Me.Label7.Text = "Wisdom"
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(7, 104)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(61, 13)
+        Me.Label6.TabIndex = 5
+        Me.Label6.Text = "Intelligence"
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(7, 87)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(62, 13)
+        Me.Label5.TabIndex = 4
+        Me.Label5.Text = "Constitution"
+        '
+        'Label4
+        '
+        Me.Label4.AutoSize = True
+        Me.Label4.Location = New System.Drawing.Point(7, 70)
+        Me.Label4.Name = "Label4"
+        Me.Label4.Size = New System.Drawing.Size(48, 13)
+        Me.Label4.TabIndex = 3
+        Me.Label4.Text = "Dexterity"
+        '
+        'lblLevel
+        '
+        Me.lblLevel.AutoSize = True
+        Me.lblLevel.Location = New System.Drawing.Point(53, 20)
+        Me.lblLevel.Name = "lblLevel"
+        Me.lblLevel.Size = New System.Drawing.Size(39, 13)
+        Me.lblLevel.TabIndex = 2
+        Me.lblLevel.Text = "<lv=1>"
+        '
+        'Label2
+        '
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(7, 53)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(47, 13)
+        Me.Label2.TabIndex = 1
+        Me.Label2.Text = "Strength"
+        '
+        'Label1
+        '
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(7, 20)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(39, 13)
+        Me.Label1.TabIndex = 0
+        Me.Label1.Text = "Level: "
+        '
+        'lblHeroName
+        '
+        Me.lblHeroName.AutoSize = True
+        Me.lblHeroName.Font = New System.Drawing.Font("Angelic War", 32.0!, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, CType(0, Byte))
+        Me.lblHeroName.Location = New System.Drawing.Point(144, 12)
+        Me.lblHeroName.Name = "lblHeroName"
+        Me.lblHeroName.Size = New System.Drawing.Size(264, 58)
+        Me.lblHeroName.TabIndex = 6
+        Me.lblHeroName.Text = "<HeroName>"
+        '
+        'eqpHands
+        '
+        Me.eqpHands.Location = New System.Drawing.Point(45, 104)
+        Me.eqpHands.Name = "eqpHands"
+        Me.eqpHands.Size = New System.Drawing.Size(64, 64)
+        Me.eqpHands.TabIndex = 8
+        Me.eqpHands.TabStop = False
+        '
+        'eqpRing2
+        '
+        Me.eqpRing2.Location = New System.Drawing.Point(255, 104)
+        Me.eqpRing2.Name = "eqpRing2"
+        Me.eqpRing2.Size = New System.Drawing.Size(64, 64)
+        Me.eqpRing2.TabIndex = 7
+        Me.eqpRing2.TabStop = False
+        '
+        'eqpRing1
+        '
+        Me.eqpRing1.Location = New System.Drawing.Point(185, 104)
+        Me.eqpRing1.Name = "eqpRing1"
+        Me.eqpRing1.Size = New System.Drawing.Size(64, 64)
+        Me.eqpRing1.TabIndex = 6
+        Me.eqpRing1.TabStop = False
+        '
+        'eqpNecklace
+        '
+        Me.eqpNecklace.Location = New System.Drawing.Point(219, 34)
+        Me.eqpNecklace.Name = "eqpNecklace"
+        Me.eqpNecklace.Size = New System.Drawing.Size(64, 64)
+        Me.eqpNecklace.TabIndex = 5
+        Me.eqpNecklace.TabStop = False
+        '
+        'eqpOffHand
+        '
+        Me.eqpOffHand.Location = New System.Drawing.Point(76, 264)
+        Me.eqpOffHand.Name = "eqpOffHand"
+        Me.eqpOffHand.Size = New System.Drawing.Size(64, 64)
+        Me.eqpOffHand.TabIndex = 4
+        Me.eqpOffHand.TabStop = False
+        '
+        'eqpMainHand
+        '
+        Me.eqpMainHand.Location = New System.Drawing.Point(6, 264)
+        Me.eqpMainHand.Name = "eqpMainHand"
+        Me.eqpMainHand.Size = New System.Drawing.Size(64, 64)
+        Me.eqpMainHand.TabIndex = 3
+        Me.eqpMainHand.TabStop = False
+        '
+        'eqpLegs
+        '
+        Me.eqpLegs.Location = New System.Drawing.Point(115, 174)
+        Me.eqpLegs.Name = "eqpLegs"
+        Me.eqpLegs.Size = New System.Drawing.Size(64, 64)
+        Me.eqpLegs.TabIndex = 2
+        Me.eqpLegs.TabStop = False
+        '
+        'eqpTorso
+        '
+        Me.eqpTorso.Location = New System.Drawing.Point(115, 104)
+        Me.eqpTorso.Name = "eqpTorso"
+        Me.eqpTorso.Size = New System.Drawing.Size(64, 64)
+        Me.eqpTorso.TabIndex = 1
+        Me.eqpTorso.TabStop = False
+        '
+        'eqpHead
+        '
+        Me.eqpHead.Location = New System.Drawing.Point(115, 34)
+        Me.eqpHead.Name = "eqpHead"
+        Me.eqpHead.Size = New System.Drawing.Size(64, 64)
+        Me.eqpHead.TabIndex = 0
+        Me.eqpHead.TabStop = False
+        '
         'frmCaracter_and_Equipement
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.ClientSize = New System.Drawing.Size(584, 562)
+        Me.Controls.Add(Me.lblHeroName)
         Me.Controls.Add(Me.grpStats)
         Me.Controls.Add(Me.grpInfo)
         Me.Controls.Add(Me.pnlInventory)
-        Me.Controls.Add(Me.GroupBox1)
-        Me.Controls.Add(Me.lblHeroName)
+        Me.Controls.Add(Me.grpCharacter)
         Me.Name = "frmCaracter_and_Equipement"
         Me.Text = "Caracter Screen"
-        Me.GroupBox1.ResumeLayout(False)
+        Me.grpCharacter.ResumeLayout(False)
+        Me.grpStats.ResumeLayout(False)
+        Me.grpStats.PerformLayout()
         CType(Me.eqpHands, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.eqpNecklace, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.eqpOffHand, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.eqpHead, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.eqpMainHand, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.eqpLegs, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.eqpChest, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eqpRing2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eqpRing1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eqpNecklace, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eqpOffHand, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eqpMainHand, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eqpLegs, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eqpTorso, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.eqpHead, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-    Friend WithEvents lblHeroName As System.Windows.Forms.Label
-    Friend WithEvents GroupBox1 As System.Windows.Forms.GroupBox
+    Friend WithEvents grpCharacter As System.Windows.Forms.GroupBox
     Friend WithEvents pnlInventory As System.Windows.Forms.Panel
     Friend WithEvents grpInfo As System.Windows.Forms.GroupBox
     Friend WithEvents grpStats As System.Windows.Forms.GroupBox
-    Friend WithEvents eqpRing1 As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpHands As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpNecklace As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpOffHand As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpHead As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpMainHand As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpLegs As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpChest As Matrix_Tile_Practise.Equip_Slot
-    Friend WithEvents eqpRing2 As Matrix_Tile_Practise.Equip_Slot
+    Friend WithEvents lblHeroName As System.Windows.Forms.Label
+    Friend WithEvents eqpHead As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpHands As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpRing2 As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpRing1 As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpNecklace As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpOffHand As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpMainHand As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpLegs As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents eqpTorso As Matrix_Tile_Practise.ItemSlot
+    Friend WithEvents Label2 As System.Windows.Forms.Label
+    Friend WithEvents Label1 As System.Windows.Forms.Label
+    Friend WithEvents lblClass As System.Windows.Forms.Label
+    Friend WithEvents Label16 As System.Windows.Forms.Label
+    Friend WithEvents Label15 As System.Windows.Forms.Label
+    Friend WithEvents lblCha As System.Windows.Forms.Label
+    Friend WithEvents lblWis As System.Windows.Forms.Label
+    Friend WithEvents lblInt As System.Windows.Forms.Label
+    Friend WithEvents lblCon As System.Windows.Forms.Label
+    Friend WithEvents lblDex As System.Windows.Forms.Label
+    Friend WithEvents lblStr As System.Windows.Forms.Label
+    Friend WithEvents Label8 As System.Windows.Forms.Label
+    Friend WithEvents Label7 As System.Windows.Forms.Label
+    Friend WithEvents Label6 As System.Windows.Forms.Label
+    Friend WithEvents Label5 As System.Windows.Forms.Label
+    Friend WithEvents Label4 As System.Windows.Forms.Label
+    Friend WithEvents lblLevel As System.Windows.Forms.Label
+
 End Class

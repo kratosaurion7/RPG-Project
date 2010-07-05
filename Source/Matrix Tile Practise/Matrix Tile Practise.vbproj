@@ -122,12 +122,14 @@
     <Compile Include="Classes\clsDialogMenu.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\Equipment Classes\GUI\Equip_Slot.vb">
-      <SubType>Component</SubType>
-    </Compile>
+    <Compile Include="Classes\Equipment Classes\BackEnd\clsItem.vb" />
     <Compile Include="Classes\Equipment Classes\GUI\ItemSlot.vb">
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Classes\Profession Classes\clsClass.vb" />
+    <Compile Include="Classes\Profession Classes\clsMage.vb" />
+    <Compile Include="Classes\Profession Classes\clsThief.vb" />
+    <Compile Include="Classes\Profession Classes\clsWarrior.vb" />
     <Compile Include="main.vb" />
     <Compile Include="Menus\Caracter_and_Equipement.Designer.vb">
       <DependentUpon>Caracter_and_Equipement.vb</DependentUpon>
@@ -175,6 +177,7 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\Caracter_and_Equipement.resx">
       <DependentUpon>Caracter_and_Equipement.vb</DependentUpon>
+      <SubType>Designer</SubType>
     </EmbeddedResource>
     <EmbeddedResource Include="Menus\MainMenu.resx">
       <DependentUpon>MainMenu.vb</DependentUpon>
@@ -269,9 +272,7 @@
       <Install>true</Install>
     </BootstrapperPackage>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Classes\Equipment Classes\BackEnd\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <PublishFile Include="Design\Arrays.txt">
       <Visible>False</Visible>
