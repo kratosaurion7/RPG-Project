@@ -196,6 +196,8 @@ Public Class frmSimplifiedForm
 
 #End Region
 
+
+
     Public Enum Direction 'Types used for direction.
         Up
         Down
@@ -209,8 +211,13 @@ Public Class frmSimplifiedForm
 
     Dim tileSize As Integer = 32 'Generic tile size
 
-    Dim testStartingPosition As New Point(11, 15)
-    Dim startingPosition As New Point(7, 2)
+    Dim startingPosition As New Point(7, 2) 'TODO: Replace this by a function that scans the tiles for one marked StartingPosition and get the location from there,
+
+    Dim characterSheet As New clsPlayer
+#Region "Temporary Forms declaration"
+    Dim characterInfoScreen As New frmCaracter_and_Equipement(characterSheet)
+
+#End Region
 
     ''' <summary>
     ''' Take the matrix in parameter and fill it with required elements from the arrays contained in the class.
@@ -572,10 +579,26 @@ Public Class frmSimplifiedForm
         ctrMessageBar.ReplaceCaret()
     End Sub
 
+    ''' <summary>
+    ''' Filling up the sheet to test.
+    ''' </summary>
+    ''' <remarks></remarks>
+    Private Sub test_FillPlayerSheet()
+        characterSheet.changeName("Leroux")
+        characterSheet.changeLevel(11)
+        characterSheet.pcClass = New clsMage
+        characterSheet.Strength = 9
+        characterSheet.Constitution = 10
+        characterSheet.Dexterity = 14
+        characterSheet.Intelligence = 18
+        characterSheet.Wisdom = 16
+        characterSheet.Charisma = 15
+    End Sub
+
     Private Sub SimplifiedForm_Load(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles MyBase.Load
 
         '######## Part 0 - Init ########
-        BasicRoad.initSurroundings(, Village, GrassyKnoll, ) : BasicRoad.Position = testStartingPosition
+        BasicRoad.initSurroundings(, Village, GrassyKnoll, ) : BasicRoad.Position = startingPosition
         Village.initSurroundings(, , , BasicRoad) : Village.Position = New Point(0, 9)
         GrassyKnoll.initSurroundings(BasicRoad, , Village, ) : GrassyKnoll.Position = New Point(5, 15)
 
@@ -587,7 +610,7 @@ Public Class frmSimplifiedForm
         GenerateTransitions(theOneMatrix, BasicRoad)
 
         '######## Part 1 - Functionality Test ########
-
+        test_FillPlayerSheet()
     End Sub
 
     Public Sub SimplifiedForm_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
@@ -631,7 +654,7 @@ Public Class frmSimplifiedForm
     End Sub
 
     Private Sub stripCaracter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles stripCaracter.Click
-        frmCaracter_and_Equipement.Show()
+        characterInfoScreen.Show()
     End Sub
 #End Region
 End Class
