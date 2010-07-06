@@ -1,4 +1,6 @@
 ######## -=README 0.3=- ########
+######## Author: Tristan Dube ########
+######## Date: 05/07/2010 ########
 
 1. -----DESCRIPTION OF THE PROJECT -----
 This is a simple project I'm doing to have fun, these are NOT the game files. These files are simply tools to help me figure out how I will proceed with making the game. I will make another version with better graphics, story and items when I feel I got enough know-how.
