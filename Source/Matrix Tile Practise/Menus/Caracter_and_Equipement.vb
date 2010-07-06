@@ -13,6 +13,8 @@
         lblInt.Text = characterSheet.Intelligence
         lblWis.Text = characterSheet.Wisdom
         lblCha.Text = characterSheet.Charisma
+
+      
     End Sub
 
     Public Sub New(ByRef sheet As clsPlayer)
