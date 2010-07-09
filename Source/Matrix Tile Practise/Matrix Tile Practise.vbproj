@@ -122,10 +122,11 @@
     <Compile Include="Classes\clsDialogMenu.vb">
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Classes\Equipment Classes\BackEnd\clsItem.vb" />
-    <Compile Include="Classes\Equipment Classes\BackEnd\Daggers\clsDaggerBase.vb" />
-    <Compile Include="Classes\Equipment Classes\BackEnd\Staves\clsStaffBase.vb" />
-    <Compile Include="Classes\Equipment Classes\BackEnd\Swords\clsSwordBase.vb" />
+    <Compile Include="Classes\Equipment Classes\Data\clsArmor.vb" />
+    <Compile Include="Classes\Equipment Classes\Data\clsConsumable.vb" />
+    <Compile Include="Classes\Equipment Classes\Data\clsItem.vb" />
+    <Compile Include="Classes\Equipment Classes\Data\clsLore.vb" />
+    <Compile Include="Classes\Equipment Classes\Data\clsWeapon.vb" />
     <Compile Include="Classes\Equipment Classes\GUI\ItemSlot.vb">
       <SubType>Component</SubType>
     </Compile>

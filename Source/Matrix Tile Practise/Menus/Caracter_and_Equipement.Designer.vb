@@ -23,15 +23,6 @@ Partial Class frmCaracter_and_Equipement
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.grpCharacter = New System.Windows.Forms.GroupBox()
-        Me.eqpHands = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpRing2 = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpRing1 = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpNecklace = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpOffHand = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpMainHand = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpLegs = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpTorso = New Matrix_Tile_Practise.ItemSlot()
-        Me.eqpHead = New Matrix_Tile_Practise.ItemSlot()
         Me.pnlInventory = New System.Windows.Forms.Panel()
         Me.grpInfo = New System.Windows.Forms.GroupBox()
         Me.grpStats = New System.Windows.Forms.GroupBox()
@@ -53,23 +44,50 @@ Partial Class frmCaracter_and_Equipement
         Me.Label2 = New System.Windows.Forms.Label()
         Me.Label1 = New System.Windows.Forms.Label()
         Me.lblHeroName = New System.Windows.Forms.Label()
-        Me.isSlot0 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot8 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot9 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot1 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot10 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot2 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot11 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot3 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot12 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot4 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot13 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot5 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot14 = New Matrix_Tile_Practise.ItemSlot()
-        Me.isSlot6 = New Matrix_Tile_Practise.ItemSlot()
         Me.isSlot15 = New Matrix_Tile_Practise.ItemSlot()
         Me.isSlot7 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot14 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot6 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot13 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot5 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot12 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot4 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot11 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot3 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot10 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot2 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot9 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot1 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot8 = New Matrix_Tile_Practise.ItemSlot()
+        Me.isSlot0 = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpHands = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpRing2 = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpRing1 = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpNecklace = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpOffHand = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpMainHand = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpLegs = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpTorso = New Matrix_Tile_Practise.ItemSlot()
+        Me.eqpHead = New Matrix_Tile_Practise.ItemSlot()
         Me.grpCharacter.SuspendLayout()
+        Me.pnlInventory.SuspendLayout()
+        Me.grpStats.SuspendLayout()
+        CType(Me.isSlot15, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot7, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot14, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot13, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot5, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot12, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot11, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot10, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot9, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot1, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot8, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.isSlot0, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eqpHands, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eqpRing2, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eqpRing1, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -79,24 +97,6 @@ Partial Class frmCaracter_and_Equipement
         CType(Me.eqpLegs, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eqpTorso, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.eqpHead, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.pnlInventory.SuspendLayout()
-        Me.grpStats.SuspendLayout()
-        CType(Me.isSlot0, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot8, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot9, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot10, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot11, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot12, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot13, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot14, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot6, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot15, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.isSlot7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'grpCharacter
@@ -116,78 +116,6 @@ Partial Class frmCaracter_and_Equipement
         Me.grpCharacter.TabIndex = 1
         Me.grpCharacter.TabStop = False
         Me.grpCharacter.Text = "Equipment"
-        '
-        'eqpHands
-        '
-        Me.eqpHands.Location = New System.Drawing.Point(45, 104)
-        Me.eqpHands.Name = "eqpHands"
-        Me.eqpHands.Size = New System.Drawing.Size(64, 64)
-        Me.eqpHands.TabIndex = 8
-        Me.eqpHands.TabStop = False
-        '
-        'eqpRing2
-        '
-        Me.eqpRing2.Location = New System.Drawing.Point(255, 104)
-        Me.eqpRing2.Name = "eqpRing2"
-        Me.eqpRing2.Size = New System.Drawing.Size(64, 64)
-        Me.eqpRing2.TabIndex = 7
-        Me.eqpRing2.TabStop = False
-        '
-        'eqpRing1
-        '
-        Me.eqpRing1.Location = New System.Drawing.Point(185, 104)
-        Me.eqpRing1.Name = "eqpRing1"
-        Me.eqpRing1.Size = New System.Drawing.Size(64, 64)
-        Me.eqpRing1.TabIndex = 6
-        Me.eqpRing1.TabStop = False
-        '
-        'eqpNecklace
-        '
-        Me.eqpNecklace.Location = New System.Drawing.Point(219, 34)
-        Me.eqpNecklace.Name = "eqpNecklace"
-        Me.eqpNecklace.Size = New System.Drawing.Size(64, 64)
-        Me.eqpNecklace.TabIndex = 5
-        Me.eqpNecklace.TabStop = False
-        '
-        'eqpOffHand
-        '
-        Me.eqpOffHand.Location = New System.Drawing.Point(76, 264)
-        Me.eqpOffHand.Name = "eqpOffHand"
-        Me.eqpOffHand.Size = New System.Drawing.Size(64, 64)
-        Me.eqpOffHand.TabIndex = 4
-        Me.eqpOffHand.TabStop = False
-        '
-        'eqpMainHand
-        '
-        Me.eqpMainHand.Location = New System.Drawing.Point(6, 264)
-        Me.eqpMainHand.Name = "eqpMainHand"
-        Me.eqpMainHand.Size = New System.Drawing.Size(64, 64)
-        Me.eqpMainHand.TabIndex = 3
-        Me.eqpMainHand.TabStop = False
-        '
-        'eqpLegs
-        '
-        Me.eqpLegs.Location = New System.Drawing.Point(115, 174)
-        Me.eqpLegs.Name = "eqpLegs"
-        Me.eqpLegs.Size = New System.Drawing.Size(64, 64)
-        Me.eqpLegs.TabIndex = 2
-        Me.eqpLegs.TabStop = False
-        '
-        'eqpTorso
-        '
-        Me.eqpTorso.Location = New System.Drawing.Point(115, 104)
-        Me.eqpTorso.Name = "eqpTorso"
-        Me.eqpTorso.Size = New System.Drawing.Size(64, 64)
-        Me.eqpTorso.TabIndex = 1
-        Me.eqpTorso.TabStop = False
-        '
-        'eqpHead
-        '
-        Me.eqpHead.Location = New System.Drawing.Point(115, 34)
-        Me.eqpHead.Name = "eqpHead"
-        Me.eqpHead.Size = New System.Drawing.Size(64, 64)
-        Me.eqpHead.TabIndex = 0
-        Me.eqpHead.TabStop = False
         '
         'pnlInventory
         '
@@ -412,101 +340,21 @@ Partial Class frmCaracter_and_Equipement
         Me.lblHeroName.TabIndex = 6
         Me.lblHeroName.Text = "<HeroName>"
         '
-        'isSlot0
+        'isSlot15
         '
-        Me.isSlot0.Location = New System.Drawing.Point(3, 3)
-        Me.isSlot0.Name = "isSlot0"
-        Me.isSlot0.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot0.TabIndex = 0
-        Me.isSlot0.TabStop = False
+        Me.isSlot15.Location = New System.Drawing.Point(491, 73)
+        Me.isSlot15.Name = "isSlot15"
+        Me.isSlot15.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot15.TabIndex = 15
+        Me.isSlot15.TabStop = False
         '
-        'isSlot8
+        'isSlot7
         '
-        Me.isSlot8.Location = New System.Drawing.Point(3, 73)
-        Me.isSlot8.Name = "isSlot8"
-        Me.isSlot8.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot8.TabIndex = 1
-        Me.isSlot8.TabStop = False
-        '
-        'isSlot9
-        '
-        Me.isSlot9.Location = New System.Drawing.Point(73, 73)
-        Me.isSlot9.Name = "isSlot9"
-        Me.isSlot9.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot9.TabIndex = 3
-        Me.isSlot9.TabStop = False
-        '
-        'isSlot1
-        '
-        Me.isSlot1.Location = New System.Drawing.Point(73, 3)
-        Me.isSlot1.Name = "isSlot1"
-        Me.isSlot1.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot1.TabIndex = 2
-        Me.isSlot1.TabStop = False
-        '
-        'isSlot10
-        '
-        Me.isSlot10.Location = New System.Drawing.Point(143, 73)
-        Me.isSlot10.Name = "isSlot10"
-        Me.isSlot10.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot10.TabIndex = 5
-        Me.isSlot10.TabStop = False
-        '
-        'isSlot2
-        '
-        Me.isSlot2.Location = New System.Drawing.Point(143, 3)
-        Me.isSlot2.Name = "isSlot2"
-        Me.isSlot2.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot2.TabIndex = 4
-        Me.isSlot2.TabStop = False
-        '
-        'isSlot11
-        '
-        Me.isSlot11.Location = New System.Drawing.Point(213, 73)
-        Me.isSlot11.Name = "isSlot11"
-        Me.isSlot11.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot11.TabIndex = 7
-        Me.isSlot11.TabStop = False
-        '
-        'isSlot3
-        '
-        Me.isSlot3.Location = New System.Drawing.Point(213, 3)
-        Me.isSlot3.Name = "isSlot3"
-        Me.isSlot3.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot3.TabIndex = 6
-        Me.isSlot3.TabStop = False
-        '
-        'isSlot12
-        '
-        Me.isSlot12.Location = New System.Drawing.Point(281, 73)
-        Me.isSlot12.Name = "isSlot12"
-        Me.isSlot12.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot12.TabIndex = 9
-        Me.isSlot12.TabStop = False
-        '
-        'isSlot4
-        '
-        Me.isSlot4.Location = New System.Drawing.Point(281, 3)
-        Me.isSlot4.Name = "isSlot4"
-        Me.isSlot4.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot4.TabIndex = 8
-        Me.isSlot4.TabStop = False
-        '
-        'isSlot13
-        '
-        Me.isSlot13.Location = New System.Drawing.Point(351, 73)
-        Me.isSlot13.Name = "isSlot13"
-        Me.isSlot13.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot13.TabIndex = 11
-        Me.isSlot13.TabStop = False
-        '
-        'isSlot5
-        '
-        Me.isSlot5.Location = New System.Drawing.Point(351, 3)
-        Me.isSlot5.Name = "isSlot5"
-        Me.isSlot5.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot5.TabIndex = 10
-        Me.isSlot5.TabStop = False
+        Me.isSlot7.Location = New System.Drawing.Point(491, 3)
+        Me.isSlot7.Name = "isSlot7"
+        Me.isSlot7.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot7.TabIndex = 14
+        Me.isSlot7.TabStop = False
         '
         'isSlot14
         '
@@ -524,21 +372,173 @@ Partial Class frmCaracter_and_Equipement
         Me.isSlot6.TabIndex = 12
         Me.isSlot6.TabStop = False
         '
-        'isSlot15
+        'isSlot13
         '
-        Me.isSlot15.Location = New System.Drawing.Point(491, 73)
-        Me.isSlot15.Name = "isSlot15"
-        Me.isSlot15.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot15.TabIndex = 15
-        Me.isSlot15.TabStop = False
+        Me.isSlot13.Location = New System.Drawing.Point(351, 73)
+        Me.isSlot13.Name = "isSlot13"
+        Me.isSlot13.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot13.TabIndex = 11
+        Me.isSlot13.TabStop = False
         '
-        'isSlot7
+        'isSlot5
         '
-        Me.isSlot7.Location = New System.Drawing.Point(491, 3)
-        Me.isSlot7.Name = "isSlot7"
-        Me.isSlot7.Size = New System.Drawing.Size(64, 64)
-        Me.isSlot7.TabIndex = 14
-        Me.isSlot7.TabStop = False
+        Me.isSlot5.Location = New System.Drawing.Point(351, 3)
+        Me.isSlot5.Name = "isSlot5"
+        Me.isSlot5.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot5.TabIndex = 10
+        Me.isSlot5.TabStop = False
+        '
+        'isSlot12
+        '
+        Me.isSlot12.Location = New System.Drawing.Point(281, 73)
+        Me.isSlot12.Name = "isSlot12"
+        Me.isSlot12.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot12.TabIndex = 9
+        Me.isSlot12.TabStop = False
+        '
+        'isSlot4
+        '
+        Me.isSlot4.Location = New System.Drawing.Point(281, 3)
+        Me.isSlot4.Name = "isSlot4"
+        Me.isSlot4.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot4.TabIndex = 8
+        Me.isSlot4.TabStop = False
+        '
+        'isSlot11
+        '
+        Me.isSlot11.Location = New System.Drawing.Point(213, 73)
+        Me.isSlot11.Name = "isSlot11"
+        Me.isSlot11.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot11.TabIndex = 7
+        Me.isSlot11.TabStop = False
+        '
+        'isSlot3
+        '
+        Me.isSlot3.Location = New System.Drawing.Point(213, 3)
+        Me.isSlot3.Name = "isSlot3"
+        Me.isSlot3.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot3.TabIndex = 6
+        Me.isSlot3.TabStop = False
+        '
+        'isSlot10
+        '
+        Me.isSlot10.Location = New System.Drawing.Point(143, 73)
+        Me.isSlot10.Name = "isSlot10"
+        Me.isSlot10.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot10.TabIndex = 5
+        Me.isSlot10.TabStop = False
+        '
+        'isSlot2
+        '
+        Me.isSlot2.Location = New System.Drawing.Point(143, 3)
+        Me.isSlot2.Name = "isSlot2"
+        Me.isSlot2.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot2.TabIndex = 4
+        Me.isSlot2.TabStop = False
+        '
+        'isSlot9
+        '
+        Me.isSlot9.Location = New System.Drawing.Point(73, 73)
+        Me.isSlot9.Name = "isSlot9"
+        Me.isSlot9.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot9.TabIndex = 3
+        Me.isSlot9.TabStop = False
+        '
+        'isSlot1
+        '
+        Me.isSlot1.Location = New System.Drawing.Point(73, 3)
+        Me.isSlot1.Name = "isSlot1"
+        Me.isSlot1.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot1.TabIndex = 2
+        Me.isSlot1.TabStop = False
+        '
+        'isSlot8
+        '
+        Me.isSlot8.Location = New System.Drawing.Point(3, 73)
+        Me.isSlot8.Name = "isSlot8"
+        Me.isSlot8.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot8.TabIndex = 1
+        Me.isSlot8.TabStop = False
+        '
+        'isSlot0
+        '
+        Me.isSlot0.Location = New System.Drawing.Point(3, 3)
+        Me.isSlot0.Name = "isSlot0"
+        Me.isSlot0.Size = New System.Drawing.Size(64, 64)
+        Me.isSlot0.TabIndex = 0
+        Me.isSlot0.TabStop = False
+        '
+        'eqpHands
+        '
+        Me.eqpHands.Location = New System.Drawing.Point(45, 104)
+        Me.eqpHands.Name = "eqpHands"
+        Me.eqpHands.Size = New System.Drawing.Size(64, 64)
+        Me.eqpHands.TabIndex = 8
+        Me.eqpHands.TabStop = False
+        '
+        'eqpRing2
+        '
+        Me.eqpRing2.Location = New System.Drawing.Point(255, 104)
+        Me.eqpRing2.Name = "eqpRing2"
+        Me.eqpRing2.Size = New System.Drawing.Size(64, 64)
+        Me.eqpRing2.TabIndex = 7
+        Me.eqpRing2.TabStop = False
+        '
+        'eqpRing1
+        '
+        Me.eqpRing1.Location = New System.Drawing.Point(185, 104)
+        Me.eqpRing1.Name = "eqpRing1"
+        Me.eqpRing1.Size = New System.Drawing.Size(64, 64)
+        Me.eqpRing1.TabIndex = 6
+        Me.eqpRing1.TabStop = False
+        '
+        'eqpNecklace
+        '
+        Me.eqpNecklace.Location = New System.Drawing.Point(219, 34)
+        Me.eqpNecklace.Name = "eqpNecklace"
+        Me.eqpNecklace.Size = New System.Drawing.Size(64, 64)
+        Me.eqpNecklace.TabIndex = 5
+        Me.eqpNecklace.TabStop = False
+        '
+        'eqpOffHand
+        '
+        Me.eqpOffHand.Location = New System.Drawing.Point(76, 264)
+        Me.eqpOffHand.Name = "eqpOffHand"
+        Me.eqpOffHand.Size = New System.Drawing.Size(64, 64)
+        Me.eqpOffHand.TabIndex = 4
+        Me.eqpOffHand.TabStop = False
+        '
+        'eqpMainHand
+        '
+        Me.eqpMainHand.Location = New System.Drawing.Point(6, 264)
+        Me.eqpMainHand.Name = "eqpMainHand"
+        Me.eqpMainHand.Size = New System.Drawing.Size(64, 64)
+        Me.eqpMainHand.TabIndex = 3
+        Me.eqpMainHand.TabStop = False
+        '
+        'eqpLegs
+        '
+        Me.eqpLegs.Location = New System.Drawing.Point(115, 174)
+        Me.eqpLegs.Name = "eqpLegs"
+        Me.eqpLegs.Size = New System.Drawing.Size(64, 64)
+        Me.eqpLegs.TabIndex = 2
+        Me.eqpLegs.TabStop = False
+        '
+        'eqpTorso
+        '
+        Me.eqpTorso.Location = New System.Drawing.Point(115, 104)
+        Me.eqpTorso.Name = "eqpTorso"
+        Me.eqpTorso.Size = New System.Drawing.Size(64, 64)
+        Me.eqpTorso.TabIndex = 1
+        Me.eqpTorso.TabStop = False
+        '
+        'eqpHead
+        '
+        Me.eqpHead.Location = New System.Drawing.Point(115, 34)
+        Me.eqpHead.Name = "eqpHead"
+        Me.eqpHead.Size = New System.Drawing.Size(64, 64)
+        Me.eqpHead.TabIndex = 0
+        Me.eqpHead.TabStop = False
         '
         'frmCaracter_and_Equipement
         '
@@ -553,6 +553,25 @@ Partial Class frmCaracter_and_Equipement
         Me.Name = "frmCaracter_and_Equipement"
         Me.Text = "Caracter Screen"
         Me.grpCharacter.ResumeLayout(False)
+        Me.pnlInventory.ResumeLayout(False)
+        Me.grpStats.ResumeLayout(False)
+        Me.grpStats.PerformLayout()
+        CType(Me.isSlot15, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot7, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot14, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot13, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot5, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot12, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot11, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot10, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot9, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot1, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot8, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.isSlot0, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eqpHands, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eqpRing2, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eqpRing1, System.ComponentModel.ISupportInitialize).EndInit()
@@ -562,25 +581,6 @@ Partial Class frmCaracter_and_Equipement
         CType(Me.eqpLegs, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eqpTorso, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.eqpHead, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.pnlInventory.ResumeLayout(False)
-        Me.grpStats.ResumeLayout(False)
-        Me.grpStats.PerformLayout()
-        CType(Me.isSlot0, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot8, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot9, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot10, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot11, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot12, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot13, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot14, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot6, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot15, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.isSlot7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
