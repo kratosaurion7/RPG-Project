@@ -4,7 +4,9 @@
     Public pclevel As Integer
     Public pcsprite As Image
     Public pcClass As clsClass
-    '///// Background stuff \\\\\
+    '///// Inventory stuff \\\\\
+    Public inventory As Collection
+
 
 #Region "Stats"
     Dim pcStrength
@@ -13,6 +15,13 @@
     Dim pcIntelligence
     Dim pcWisdom
     Dim pcCharisma
+#End Region
+
+#Region "Test Procedures"
+    Public Sub fillInventory(ByVal pInventory As Collection)
+
+
+    End Sub
 #End Region
 
     Public Sub changeName(ByVal newName As String)
@@ -30,6 +39,15 @@
 
     Public Sub New()
         pcsprite = My.Resources.Link
+    End Sub
+
+    Public Sub addItem(ByVal paramItem As clsItem)
+        If inventory.Count < 15 Then
+            inventory.Add(paramItem, inventory.Count)
+        Else
+            'Output "Inventory is full" message
+            MessageBox.Show("Inventory is full")
+        End If
     End Sub
 
 #Region "Properties"
