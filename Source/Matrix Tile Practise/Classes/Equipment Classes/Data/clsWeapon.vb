@@ -8,4 +8,10 @@
 
     End Sub
 
+    Public Function findDamage(ByVal min As Integer, ByVal max As Integer)
+        Randomize()
+        Return CInt(Int((max * Rnd()) + min))
+    End Function
+
+
 End Class
