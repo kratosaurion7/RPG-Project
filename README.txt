@@ -14,6 +14,10 @@ You are more than welcome to help me debug part of the game. Download the two bi
 4. ----- To contribute -----
 If you would like to contribute to the projcet, maybe it be modification to the code or comments/suggestions. Send me a mail at tristan.dube@gmail.com and we can talk about it. This was created as a one man project and I'm not really looking for another person to code with me but I would be a fool to refuse help and feedback. Feel free to fork my project and modify it as you want. Just mention my name and we're good to go. 
 
+5. ----- Disclaimer -----
+I took a couple of images here and there. Most textures are from me but the item pictures and sprites are the property of their respective owner. Disclaimer.txt can be found at these location:
+\Textures\Items
+
 How To Report a bug:
 
 1. Describe the bug: 
