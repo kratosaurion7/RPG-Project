@@ -5,13 +5,13 @@
 Public Class ItemSlot
     Inherits PictureBox
 
-    Public canFit As Collection 'The variable that dictates what kind of item can be fitted inside the slot
+    Public itemIn As clsItem 'The item contained in the slot
+    'The execution skips here because the itemIn is not new'ed, not sure why I should new it but it works. That is bad.
 
     Public Sub New()
-        MyBase.New()
+        MyBase.new()
         Me.Size = New Size(64, 64)
 
     End Sub
-
 
 End Class
