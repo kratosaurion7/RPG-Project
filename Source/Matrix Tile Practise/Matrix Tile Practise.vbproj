@@ -127,6 +127,7 @@
     <Compile Include="Classes\Equipment Classes\Data\clsItem.vb" />
     <Compile Include="Classes\Equipment Classes\Data\clsLore.vb" />
     <Compile Include="Classes\Equipment Classes\Data\clsWeapon.vb" />
+    <Compile Include="Classes\Equipment Classes\clsItemData.vb" />
     <Compile Include="Classes\Equipment Classes\GUI\ItemSlot.vb">
       <SubType>Component</SubType>
     </Compile>

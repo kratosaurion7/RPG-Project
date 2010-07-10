@@ -92,6 +92,8 @@ Partial Class frmSimplifiedForm
         Me.Controls.Add(Me.stripInfoBar)
         Me.Controls.Add(Me.ctrMessageBar)
         Me.KeyPreview = True
+        Me.MaximumSize = New System.Drawing.Size(525, 622)
+        Me.MinimumSize = New System.Drawing.Size(525, 622)
         Me.Name = "frmSimplifiedForm"
         Me.Text = "SimplifiedForm"
         Me.stripInfoBar.ResumeLayout(False)
