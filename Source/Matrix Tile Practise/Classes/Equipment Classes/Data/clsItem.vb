@@ -3,7 +3,7 @@
     Public description As String
     Public iPicture As Image
 
-    Public tags As ArrayList
+    Public tags As New ArrayList
 
     Public Sub New(ByVal pName As String)
         name = pName
