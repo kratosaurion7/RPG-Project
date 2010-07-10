@@ -196,15 +196,6 @@ Public Class frmSimplifiedForm
 
 #End Region
 
-
-
-    Public Enum Direction 'Types used for direction.
-        Up
-        Down
-        Left
-        Right
-    End Enum
-
     Dim NPC_Collection As New Collection 'Collection containing every clsNPC added by the FillMatrix
 
     Dim theOneMatrix(15, 15) As clsTile 'Matrix filled with pictureboxes to represend the map.
@@ -214,6 +205,8 @@ Public Class frmSimplifiedForm
     Dim startingPosition As New Point(7, 2) 'TODO: Replace this by a function that scans the tiles for one marked StartingPosition and get the location from there,
 
     Dim characterSheet As New clsPlayer
+
+    Friend itemSheet As New clsItemData
 #Region "Temporary Forms declaration"
     Dim characterInfoScreen As New frmCaracter_and_Equipement(characterSheet)
 
@@ -583,7 +576,7 @@ Public Class frmSimplifiedForm
     ''' Filling up the sheet to test.
     ''' </summary>
     ''' <remarks></remarks>
-    Private Sub test_FillPlayerSheet()
+    Private Sub _testFillPlayerSheet()
         characterSheet.changeName("Leroux")
         characterSheet.changeLevel(11)
         characterSheet.pcClass = New clsMage
@@ -610,7 +603,7 @@ Public Class frmSimplifiedForm
         GenerateTransitions(theOneMatrix, BasicRoad)
 
         '######## Part 1 - Functionality Test ########
-        test_FillPlayerSheet()
+        _testFillPlayerSheet()
     End Sub
 
     Public Sub SimplifiedForm_KeyUp(ByVal sender As System.Object, ByVal e As System.Windows.Forms.KeyEventArgs) Handles MyBase.KeyUp
@@ -654,6 +647,8 @@ Public Class frmSimplifiedForm
     End Sub
 
     Private Sub stripCaracter_Click(ByVal sender As System.Object, ByVal e As System.EventArgs) Handles stripCaracter.Click
+        characterInfoScreen.character = characterSheet 'Same as below
+        characterInfoScreen.itemSheet = itemSheet 'Take the item sheet and pass it to the character form using a pointer.
         characterInfoScreen.Show()
     End Sub
 #End Region
