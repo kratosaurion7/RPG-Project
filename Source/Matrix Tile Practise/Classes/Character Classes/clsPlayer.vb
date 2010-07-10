@@ -5,7 +5,7 @@
     Public pcsprite As Image
     Public pcClass As clsClass
     '///// Inventory stuff \\\\\
-    Public inventory As Collection
+    Public inventory As New Collection
 
 
 #Region "Stats"
@@ -18,7 +18,7 @@
 #End Region
 
 #Region "Test Procedures"
-    Public Sub fillInventory(ByVal pInventory As Collection)
+    Public Sub fillInventory()
 
 
     End Sub
@@ -41,6 +41,11 @@
         pcsprite = My.Resources.Link
     End Sub
 
+    ''' <summary>
+    ''' Add an item to the inventory.
+    ''' </summary>
+    ''' <param name="paramItem">The item we wish to add</param>
+    ''' <remarks>Won't add more items if there is already 15(16) elements in the inventory.</remarks>
     Public Sub addItem(ByVal paramItem As clsItem)
         If inventory.Count < 15 Then
             inventory.Add(paramItem, inventory.Count)
